@@ -25,4 +25,4 @@ c=output.stdout.decode('utf-8').splitlines()
 d = {}
 
 for x in c:
-    d[x.split('\t')[0]] = x.split('\t')[1]
+    d[x.split('\t')[0]] = x.split('/')[-1]
