@@ -3,7 +3,7 @@
 # Define some basic environmental variables before launching the suite
 
 # Load the analysis3 conda environment
-module use /g/data/hh5/public/modules
+module use /g/data/xp65/public/modules
 module load conda/analysis3
 
 # Root directory for this repo
