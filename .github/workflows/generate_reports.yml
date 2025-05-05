@@ -16,6 +16,8 @@ jobs:
           script: |
               module use /g/data3/xp65/public/modules
               module load conda/analysis3
-              which python > python.txt
-              date > date.txt
+              cd /g/data/gb02/public/code/nci_tools/
+              source ./env.sh
+              cd notebooks
+              quarto render dashboard.ipynb --execute --to html
       
