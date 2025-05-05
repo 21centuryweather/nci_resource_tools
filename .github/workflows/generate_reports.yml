@@ -1,4 +1,5 @@
 name: Generate NCI resources report
+on: [push]
 
 jobs:
   runcode:
@@ -10,7 +11,7 @@ jobs:
           host: ${{secrets.HOST}}
           username: ${{secrets.USER}}
           key: ${{secrets.SSH_KEY}}
-          passphrase: ${{secrets.PASSPHRASE}}
+          passphrase: ${{secrets.PASSPHRASE}} 
           command_timeout: 60m
           script: |
               module use /g/data3/xp65/public/modules
