@@ -22,3 +22,6 @@ export PYTHONPATH=${MODULES}:${TOOLS}:${PYTHONPATH}
 
 # Add quarto to our path
 export PATH=${PATH}:/g/data/gb02/pag548/quarto-1.7.29/bin/
+
+echo " INFO : PYTHONPATH=${PYTHONPATH}"
+echo " INFO : PATH=${PATH}"
