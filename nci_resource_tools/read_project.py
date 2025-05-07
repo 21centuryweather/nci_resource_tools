@@ -28,6 +28,9 @@ def retrieve_project_data():
             SU_df_dict[project] = SUs_df
             grant_dict[project] = grant
         
+            # Rename the index
+            SU_df_dict[project].index.rename('user',inplace=True)
+
     return SU_df_dict, grant_dict, storage_dict
 
 
@@ -79,3 +82,4 @@ def create_storage_df(storage_dict):
             storage_data[project]['scratch'] = storage_data[project].pop(scratch_diskname)
 
     return storage_data
+
