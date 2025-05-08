@@ -1,5 +1,8 @@
 name: Generate NCI resources report
-on: [push]
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * *'
 
 jobs:
   runcode:
