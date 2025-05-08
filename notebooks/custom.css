@@ -1,0 +1,16 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: "Helvetica";
+
+// Base document colors
+$navbar-bg: #0088CC;
+$link-color: #3877e5;
+
+.quarto-dashboard #quarto-dashboard-header .navbar .navbar-title .navbar-title-text {
+    font-size:1.5em;
+    line-height:1.1em;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:baseline
+  }
