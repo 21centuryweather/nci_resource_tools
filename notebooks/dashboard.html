@@ -69,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="dashboard_files/libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="dashboard_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="dashboard_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="dashboard_files/libs/bootstrap/bootstrap-55be0a3c34b4616f28c622aa6f1df881.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="dashboard_files/libs/bootstrap/bootstrap-add83f8d04d9f55008a30c677fe464e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -136,7 +136,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="8d7aca97-f01e-4419-a7b7-37b5479d1832" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="ss">f'INFO : Executing at </span><span class="sc">{</span>dt<span class="sc">.</span>datetime<span class="sc">.</span>now()<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>INFO : Executing at 2025-05-07 18:15:10.815121</code></pre>
+<pre><code>INFO : Executing at 2025-05-14 12:29:21.847893</code></pre>
 </div>
 </div>
 <table class="caption-top table">
@@ -206,8 +206,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="st">if69, gs5098, 300</span></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="st">if69, mb0427, 10</span></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="st">ng72, lk5320, 10</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="st">ng72, gs5098, 240</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="st"> """</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="st">ng72, gs5098, 640</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="st">ng72, ms5578, 100</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="st"> """</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="a9335d3b-0c9d-40b1-9925-c2b5c1a9ed29" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>allocation_df<span class="op">=</span>pd.read_csv(io.StringIO(csv_table),skipinitialspace<span class="op">=</span><span class="va">True</span>)</span>
@@ -215,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>allocation_df.set_index(Index,inplace<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>allocation_df <span class="op">=</span> allocation_df[<span class="st">'allocation'</span>].to_frame()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="dd9849d7-3bcc-42ce-82e3-f7784650457c" class="cell" data-execution_count="8">
+<div id="dd9849d7-3bcc-42ce-82e3-f7784650457c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>allocation_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -271,13 +272,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>10</td>
 </tr>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">ng72</td>
+<td rowspan="3" data-quarto-table-cell-role="th" data-valign="top">ng72</td>
 <td data-quarto-table-cell-role="th">lk5320</td>
 <td>10</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">gs5098</td>
-<td>240</td>
+<td>640</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">ms5578</td>
+<td>100</td>
 </tr>
 </tbody>
 </table>
@@ -285,17 +290,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="ee244782-b193-46ce-904f-9abf5d6a8afe" class="cell" data-execution_count="10">
+<div id="ee244782-b193-46ce-904f-9abf5d6a8afe" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alloc_df_dict <span class="op">=</span> check_allocation(grant_dict,</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                                 SU_df_dict,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                                 allocation_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>WARNING : gs5098 has consumed 77.19% of their gb02 SU allocation
+<pre><code>WARNING : gs5098 has consumed 96.18% of their gb02 SU allocation
 CRITICAL : gs5098 has consumed 142.53% of their if69 SU allocation
-CRITICAL : gs5098 has consumed 235.58% of their ng72 SU allocation</code></pre>
+CRITICAL : gs5098 has consumed 116.34% of their ng72 SU allocation</code></pre>
 </div>
 </div>
-<div id="83bfab40-87ec-4309-a905-ae8941a4249b" class="cell" data-execution_count="12">
+<div id="83bfab40-87ec-4309-a905-ae8941a4249b" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot allocations for each user</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,project <span class="kw">in</span> <span class="bu">enumerate</span>(grant_dict.keys()):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    num_columns<span class="op">=</span><span class="dv">4</span>  </span>
@@ -324,67 +329,90 @@ CRITICAL : gs5098 has consumed 235.58% of their ng72 SU allocation</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-13-output-1.png" width="855" height="286" class="figure-img"></p>
+<p><img src="dashboard_files/figure-html/cell-10-output-1.png" width="855" height="286" class="figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-13-output-2.png" width="739" height="286" class="figure-img"></p>
+<p><img src="dashboard_files/figure-html/cell-10-output-2.png" width="739" height="286" class="figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-13-output-3.png" width="736" height="286" class="figure-img"></p>
+<p><img src="dashboard_files/figure-html/cell-10-output-3.png" width="736" height="286" class="figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-13-output-4.png" width="741" height="286" class="figure-img"></p>
+<p><img src="dashboard_files/figure-html/cell-10-output-4.png" width="857" height="286" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="bceb457c-9aeb-440a-867c-4539aca0ffb8" class="cell" data-execution_count="13">
+<div id="7abc57b6-1e3b-4bc8-9a15-3f37964005c1" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot kSUs for every project</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>fig,axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="bu">len</span>(grant_dict),figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">4</span>))</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>USER_NAMES <span class="op">=</span> <span class="dv">5</span>  <span class="co">#Plot the top five usernames of SU usage</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,project <span class="kw">in</span> <span class="bu">enumerate</span>(grant_dict.keys()):</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    SU_df_dict[project][<span class="st">'usage'</span>].sort_values(ascending<span class="op">=</span><span class="va">True</span>).to_frame().T.plot.bar(stacked<span class="op">=</span><span class="va">True</span>,ax<span class="op">=</span>axes[i],width<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    patches, labels <span class="op">=</span> axes[i].get_legend_handles_labels()</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    axes[i].legend(handles<span class="op">=</span>patches[<span class="op">-</span>USER_NAMES:][::<span class="op">-</span><span class="dv">1</span>],labels<span class="op">=</span>labels[<span class="op">-</span>USER_NAMES:][::<span class="op">-</span><span class="dv">1</span>],loc<span class="op">=</span><span class="dv">7</span>)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    axes[i].hlines(grant_dict[project],<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,linestyles<span class="op">=</span><span class="st">'dashed'</span>,color<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    axes[i].annotate(<span class="st">'Grant'</span>,(<span class="op">-</span><span class="fl">0.35</span>,<span class="fl">0.95</span><span class="op">*</span>grant_dict[project]))</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    axes[i].yaxis.set_label_text(<span class="st">'kSU'</span>)</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    axes[i].set_title(project)</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="ss">f"SU usage as of </span><span class="sc">{</span>dt<span class="sc">.</span>datetime<span class="sc">.</span>today()<span class="sc">.</span>strftime(<span class="st">'%A %B %Y'</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>Text(0.5, 0.98, 'SU usage as of Wednesday May 2025')</code></pre>
-</div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>USER_NAMES <span class="op">=</span> <span class="dv">5</span>  <span class="co">#Plot the top five usernames of SU usage</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,project <span class="kw">in</span> <span class="bu">enumerate</span>(grant_dict.keys()):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    allocation_df.xs(project,level<span class="op">=</span><span class="st">'project'</span>).T.plot.bar(stacked<span class="op">=</span><span class="va">True</span>,ax<span class="op">=</span>axes[i],width<span class="op">=</span><span class="fl">0.2</span>,rot<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    patches, labels <span class="op">=</span> axes[i].get_legend_handles_labels()</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    axes[i].legend(handles<span class="op">=</span>patches[<span class="op">-</span>USER_NAMES:][::<span class="op">-</span><span class="dv">1</span>],labels<span class="op">=</span>labels[<span class="op">-</span>USER_NAMES:][::<span class="op">-</span><span class="dv">1</span>],loc<span class="op">=</span><span class="dv">7</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    axes[i].hlines(grant_dict[project],<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,linestyles<span class="op">=</span><span class="st">'dashed'</span>,color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    axes[i].annotate(<span class="st">'Grant'</span>,(<span class="op">-</span><span class="fl">0.3</span>,<span class="fl">0.92</span><span class="op">*</span>grant_dict[project]))</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    axes[i].yaxis.set_label_text(<span class="st">'kSU'</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    axes[i].set_title(project)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="ss">f"SU allocations as of </span><span class="sc">{</span>dt<span class="sc">.</span>datetime<span class="sc">.</span>today()<span class="sc">.</span>strftime(<span class="st">'%A %B %Y'</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-14-output-2.png" width="1197" height="403" class="figure-img"></p>
+<p><img src="dashboard_files/figure-html/cell-11-output-1.png" width="1429" height="380" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="32b33aa9-2c88-45bb-bf9a-d9b557bf185d" class="cell" data-execution_count="14">
+<div id="bceb457c-9aeb-440a-867c-4539aca0ffb8" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot kSUs for every project</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>fig,axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="bu">len</span>(grant_dict),figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">4</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>USER_NAMES <span class="op">=</span> <span class="dv">5</span>  <span class="co">#Plot the top five usernames of SU usage</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,project <span class="kw">in</span> <span class="bu">enumerate</span>(grant_dict.keys()):</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    SU_df_dict[project][<span class="st">'usage'</span>].sort_values(ascending<span class="op">=</span><span class="va">True</span>).to_frame().T.plot.bar(stacked<span class="op">=</span><span class="va">True</span>,ax<span class="op">=</span>axes[i],width<span class="op">=</span><span class="fl">0.3</span>,rot<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    patches, labels <span class="op">=</span> axes[i].get_legend_handles_labels()</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    axes[i].legend(handles<span class="op">=</span>patches[<span class="op">-</span>USER_NAMES:][::<span class="op">-</span><span class="dv">1</span>],labels<span class="op">=</span>labels[<span class="op">-</span>USER_NAMES:][::<span class="op">-</span><span class="dv">1</span>],loc<span class="op">=</span><span class="dv">7</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    axes[i].hlines(grant_dict[project],<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,linestyles<span class="op">=</span><span class="st">'dashed'</span>,color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    axes[i].annotate(<span class="st">'Grant'</span>,(<span class="op">-</span><span class="fl">0.3</span>,<span class="fl">0.92</span><span class="op">*</span>grant_dict[project]))</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    axes[i].yaxis.set_label_text(<span class="st">'kSU'</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    axes[i].set_title(project)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="ss">f"SU usage as of </span><span class="sc">{</span>dt<span class="sc">.</span>datetime<span class="sc">.</span>today()<span class="sc">.</span>strftime(<span class="st">'%A %B %Y'</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="dashboard_files/figure-html/cell-12-output-1.png" width="1429" height="380" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="32b33aa9-2c88-45bb-bf9a-d9b557bf185d" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>storage_data <span class="op">=</span> create_storage_df(storage_dict)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="storage-usage" class="level3">
 <h3 class="anchored" data-anchor-id="storage-usage">Storage usage</h3>
-<div id="6f577425-1669-4f7c-8ad9-60926ee6e639" class="cell" data-execution_count="15">
+<div id="6f577425-1669-4f7c-8ad9-60926ee6e639" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>num_columns<span class="op">=</span><span class="dv">2</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>num_rows <span class="op">=</span> <span class="bu">len</span>(COE_PROJECTS)    </span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>num_plots <span class="op">=</span> <span class="bu">sum</span>(<span class="bu">len</span>(v) <span class="cf">for</span> v <span class="kw">in</span> storage_dict.values())</span>
@@ -421,18 +449,18 @@ CRITICAL : gs5098 has consumed 235.58% of their ng72 SU allocation</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-16-output-1.png" width="1149" height="1415" class="figure-img"></p>
+<p><img src="dashboard_files/figure-html/cell-14-output-1.png" width="1149" height="1415" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="3c301cf1-baf8-4b2f-8705-aecd8089c7ac" class="cell" data-execution_count="16">
+<div id="3c301cf1-baf8-4b2f-8705-aecd8089c7ac" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>du_dict <span class="op">=</span> find_largest_users(COE_PROJECTS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e741c93a-171f-478c-8c78-4c76070ccc06" class="cell" data-execution_count="17">
+<div id="e741c93a-171f-478c-8c78-4c76070ccc06" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>user_storage_numeric<span class="op">=</span>pd.concat(du_dict)[<span class="st">'TOTAL SIZE'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="021cceeb-cc21-4702-8c52-52c10542d662" class="cell" data-execution_count="18">
+<div id="021cceeb-cc21-4702-8c52-52c10542d662" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the five largest users for each project</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>fig,axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="bu">len</span>(COE_PROJECTS),figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">4</span>))</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -449,7 +477,7 @@ CRITICAL : gs5098 has consumed 235.58% of their ng72 SU allocation</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-19-output-1.png" width="1429" height="381" class="figure-img"></p>
+<p><img src="dashboard_files/figure-html/cell-17-output-1.png" width="1429" height="381" class="figure-img"></p>
 </figure>
 </div>
 </div>
