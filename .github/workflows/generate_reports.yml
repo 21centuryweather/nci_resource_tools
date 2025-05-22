@@ -21,6 +21,6 @@ jobs:
               module load conda/analysis3
               cd /g/data/gb02/public/code/nci_resource_tools
               source ./env.sh
-              cd notebooks
+              cd docs
               quarto render dashboard.ipynb --execute --to html
       
