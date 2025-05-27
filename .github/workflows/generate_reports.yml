@@ -20,7 +20,6 @@ jobs:
               module use /g/data3/xp65/public/modules
               module load conda/analysis3
               cd /g/data/gb02/public/code/nci_resource_tools
-              git restore notebooks/dashboard.html
               git pull
               source ./env.sh
               quarto render docs/dashboard.ipynb --execute --to html
