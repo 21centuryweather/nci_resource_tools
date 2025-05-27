@@ -1,5 +1,8 @@
 name: Generate NCI resources report
-on: [push]
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * *'
 
 jobs:
   runcode:
@@ -17,7 +20,15 @@ jobs:
               module use /g/data3/xp65/public/modules
               module load conda/analysis3
               cd /g/data/gb02/public/code/nci_resource_tools
+              git restore notebooks/dashboard.html
+              git pull
               source ./env.sh
-              cd notebooks
-              quarto render dashboard.ipynb --execute --to html
+              quarto render docs/dashboard.ipynb --execute --to html
+              git add docs/dashboard*
+              git commit -m "UPDATE: dashboard"
+              quarto render docs/page.ipynb --execute --to html
+              git add docs/page*
+              git commit -m "UPDATE: page"
+              git push
+               
       
