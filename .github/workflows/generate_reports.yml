@@ -20,7 +20,14 @@ jobs:
               module use /g/data3/xp65/public/modules
               module load conda/analysis3
               cd /g/data/gb02/public/code/nci_resource_tools
+              git pull
               source ./env.sh
-              cd docs
-              quarto render dashboard.ipynb --execute --to html
+              quarto render docs/dashboard.ipynb --execute --to html
+              git add docs/dashboard*
+              git commit -m "UPDATE: dashboard"
+              quarto render docs/page.ipynb --execute --to html
+              git add docs/page*
+              git commit -m "UPDATE: page"
+              git push
+               
       
