@@ -31,10 +31,22 @@ ul.task-list li input[type="checkbox"] {
 <script src="dashboard_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="dashboard_files/libs/quarto-html/anchor.min.js"></script>
 <link href="dashboard_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="dashboard_files/libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="dashboard_files/libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="dashboard_files/libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="dashboard_files/libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="dashboard_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="dashboard_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="dashboard_files/libs/bootstrap/bootstrap-add83f8d04d9f55008a30c677fe464e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="dashboard_files/libs/bootstrap/bootstrap-dee352a49f6546e6834e9f2871a0f6b3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="dashboard_files/libs/bootstrap/bootstrap-dark-dee352a49f6546e6834e9f2871a0f6b3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="dashboard_files/libs/bootstrap/bootstrap-dee352a49f6546e6834e9f2871a0f6b3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="dashboard_files/libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="dashboard_files/libs/quarto-dashboard/stickythead.js"></script>
+
+
+
+<script src="dashboard_files/libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="dashboard_files/libs/quarto-dashboard/components.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -42,48 +54,46 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-dashboard dashboard-fill fullcontent quarto-light">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Computational resources for NCI projects</h1>
-</div>
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
 
 
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>21st Century Weather </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-
+    <div class="navbar-brand-container">       
+    <a href="#"><img src="logo.png" alt="" class="navbar-logo d-inline-block"></a>
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">Computational resources for NCI projects</a></div>
+        
+        <div class="navbar-author">21st Century Weather</div>
+      </div>
+    </div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-usage" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#usage" data-scrolling="false" href="#usage" aria-controls="usage" aria-selected="true"><span class="nav-link-text">Usage</span></a></li><li class="nav-item" role="presentation"><a id="tab-projects" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#projects" data-scrolling="false" href="#projects" aria-controls="projects" aria-selected="false"><span class="nav-link-text">Projects</span></a></li></ul><div class="quarto-dashboard-links"><a class="quarto-dashboard-link" href="https://github.com/21centuryweather/nci_resource_tools"><i class="bi bi-github"></i></a></div></div></div>
+</nav>
 </header>
+<div class="page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">  
+
+<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div id="usage" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-usage">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card tabset html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header dashboard-card-no-title bslib-navs-card-title">
+
+<ul class="nav nav-tabs card-header-tabs" role="tablist" data-tabsetid="card-tabset-1"><li class="nav-item" role="presentation"><a href="#card-tabset-1-1" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="SU usage" aria-selected="true" class="nav-link active">SU usage</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-1-2" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Storage usage" aria-selected="false" class="nav-link">Storage usage</a></li></ul></div>
 
 
-<section id="usage" class="level1">
-<h1>Usage</h1>
-<section id="figures" class="level2 tabset">
-<h2 class="tabset anchored" data-anchor-id="figures">Figures</h2>
-<section id="su-usage" class="level3">
-<h3 class="anchored" data-anchor-id="su-usage">SU usage</h3>
-<section id="column" class="level4" width="20%">
-<h4 width="20%" class="anchored" data-anchor-id="column">Column</h4>
-<div id="dd9849d7-3bcc-42ce-82e3-f7784650457c" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="6">
-<div>
+<div class="tab-content html-fill-item html-fill-container" data-tabset-id="card-tabset-1"><div class="tab-pane active show html-fill-item html-fill-container" role="tabpanel" id="card-tabset-1-1"><div class="card-body html-fill-item html-fill-container" data-title="SU usage">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 20fr) minmax(3em, 20fr) minmax(3em, 60fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="6">
+<div class="html-fill-item html-fill-container">
 
 
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -150,95 +160,115 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<div id="ee244782-b193-46ce-904f-9abf5d6a8afe" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-stdout">
-<pre><code>WARNING : pag548 has consumed 84.02% of their gb02 SU allocation
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
+<pre><code>WARNING : pag548 has consumed 83.70% of their gb02 SU allocation
 WARNING : gs5098 has consumed 97.13% of their gb02 SU allocation
 CRITICAL : gs5098 has consumed 142.53% of their if69 SU allocation
 CRITICAL : gs5098 has consumed 310.24% of their ng72 SU allocation</code></pre>
 </div>
 </div>
-</section>
-<section id="column-1" class="level4" width="20%">
-<h4 width="20%" class="anchored" data-anchor-id="column-1">Column</h4>
-<div id="83bfab40-87ec-4309-a905-ae8941a4249b" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-9-output-1.png" width="855" height="286" class="figure-img"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div><div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="dashboard_files/figure-html/cell-9-output-1.png" class="quarto-dashboard-img-contain">
+</div>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="dashboard_files/figure-html/cell-9-output-2.png" class="quarto-dashboard-img-contain">
+</div>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="dashboard_files/figure-html/cell-9-output-3.png" class="quarto-dashboard-img-contain">
+</div>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="dashboard_files/figure-html/cell-9-output-4.png" class="quarto-dashboard-img-contain">
 </div>
 </div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-9-output-2.png" width="739" height="286" class="figure-img"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div><div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="dashboard_files/figure-html/cell-10-output-1.png" class="quarto-dashboard-img-contain">
 </div>
 </div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-9-output-3.png" width="736" height="286" class="figure-img"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="dashboard_files/figure-html/cell-11-output-1.png" class="quarto-dashboard-img-contain">
 </div>
 </div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-9-output-4.png" width="741" height="286" class="figure-img"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 </div>
-</div>
-</section>
-<section id="column-2" class="level4" width="60%">
-<h4 width="60%" class="anchored" data-anchor-id="column-2">Column</h4>
-<div id="7abc57b6-1e3b-4bc8-9a15-3f37964005c1" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-10-output-1.png" width="1429" height="381" class="figure-img"></p>
-</figure>
+</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-1-2"><div class="card-body html-fill-item html-fill-container" data-title="Storage usage">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="dashboard_files/figure-html/cell-13-output-1.png" class="quarto-dashboard-img-contain">
 </div>
 </div>
-</div>
-<div id="bceb457c-9aeb-440a-867c-4539aca0ffb8" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-11-output-1.png" width="1429" height="381" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="storage-usage" class="level3">
-<h3 class="anchored" data-anchor-id="storage-usage">Storage usage</h3>
-<div id="6f577425-1669-4f7c-8ad9-60926ee6e639" class="cell" data-execution_count="12">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-13-output-1.png" width="1149" height="1415" class="figure-img"></p>
-</figure>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<img src="dashboard_files/figure-html/cell-16-output-1.png" class="quarto-dashboard-img-contain">
 </div>
 </div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-<div id="021cceeb-cc21-4702-8c52-52c10542d662" class="cell" data-execution_count="15">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dashboard_files/figure-html/cell-16-output-1.png" width="1429" height="381" class="figure-img"></p>
-</figure>
+</div></div></div><bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 </div>
-</div>
-</section>
-</section>
-</section>
-<section id="projects" class="level1">
-<h1>Projects</h1>
+<div id="projects" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-projects">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -289,10 +319,21 @@ CRITICAL : gs5098 has consumed 310.24% of their ng72 SU allocation</code></pre>
 </table>
 <p>*gb02 panel: Navid Constantinou, Paul Gregory, Bethan White, Chenhui Jin, Andrew Brown, and Sam Green</p>
 <p>Last update: 27-05-2025 17:05</p>
-</section>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
 
-</main>
-<!-- /main column -->
+</div>
+</div>
+</div>
+</div>
+
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -692,8 +733,16 @@ CRITICAL : gs5098 has consumed 310.24% of their ng72 SU allocation</code></pre>
     }
   });
   </script>
-</div> <!-- /content -->
+</div> <!-- /container fluid -->
 
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
 
 
 
