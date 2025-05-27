@@ -20,7 +20,10 @@ jobs:
               module use /g/data3/xp65/public/modules
               module load conda/analysis3
               cd /g/data/gb02/public/code/nci_resource_tools
-              git restore notebooks/dashboard.html
+              git remove docs/.ipynb_checkpoints/dashboard-checkpoint.html
+	            git remove notebooks/dashboard.ipynb
+	            git remove notebooks/dashboard_files/figure-html/cell-10-output-1.png
+
               git pull
               source ./env.sh
               quarto render docs/dashboard.ipynb --execute --to html
