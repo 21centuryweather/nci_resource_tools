@@ -22,7 +22,7 @@ jobs:
               cd /g/data/gb02/public/code/nci_resource_tools
               git pull
               source ./env.sh
-              quarto render docs/dashboard.ipynb --execute --to html
+              quarto render docs/dashboard.ipynb --execute
               git add docs/dashboard*
               git commit -m "UPDATE: dashboard"
               quarto render docs/page.ipynb --execute --to html
