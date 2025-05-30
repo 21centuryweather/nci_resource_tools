@@ -17,8 +17,6 @@ jobs:
           passphrase: ${{secrets.PASSPHRASE}} 
           command_timeout: 60m
           script: |
-              module use /g/data3/xp65/public/modules
-              module load conda/analysis3
               cd /g/data/gb02/public/code/nci_resource_tools
               git pull
               source ./env.sh
