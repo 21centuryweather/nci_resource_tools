@@ -23,9 +23,6 @@ jobs:
               quarto render docs/dashboard.ipynb --execute
               git add docs/dashboard*
               git commit -m "UPDATE: dashboard"
-              quarto render docs/page.ipynb --execute --to html
-              git add docs/page*
-              git commit -m "UPDATE: page"
               git push
                
       
