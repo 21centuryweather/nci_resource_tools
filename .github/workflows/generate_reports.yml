@@ -17,6 +17,7 @@ jobs:
           passphrase: ${{secrets.PASSPHRASE}} 
           command_timeout: 60m
           script: |
+              set -e
               cd /g/data/gb02/public/code/nci_resource_tools
               git pull
               source ./env.sh
