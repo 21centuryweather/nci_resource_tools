@@ -38,30 +38,35 @@ def check_allocation(grant_dict,
 
 def create_user_table(SU_df_dict1, 
                       allocation_df,
+                      default_limits=None
                       ):
-
     """
     Create a table of usage by user for a given project
     """   
+    if default_limits is None:
+        default_limits = {project: 5 for project in SU_df_dict1.keys()}
+    
     user_totals = {}
     for i,project in enumerate(SU_df_dict1.keys()):
-        
         user_totals[project] = SU_df_dict1[project].groupby('user')['usage'].sum()
-
+    
     table_by_user = pd.DataFrame(pd.concat(user_totals)).reset_index(names=['project', 'user'])
-
     table_by_user['usage'] = table_by_user['usage'].round(1)
-    table_by_user = table_by_user.merge(allocation_df, on=['project','user'], how='left').fillna(5)
+    table_by_user = table_by_user.merge(allocation_df, on=['project','user'], how='left')
+    
+    # Fill missing allocations with project-specific defaults
+    table_by_user['allocation'] = table_by_user.apply(
+        lambda row: default_limits.get(row['project'], 5) if pd.isna(row['allocation']) else row['allocation'], 
+        axis=1
+    )
+    
     table_by_user['allocation'] = table_by_user['allocation'].round(1)
     table_by_user['status'] = np.where(table_by_user['usage'] > table_by_user['allocation'],
     'Usage exceeds allocation by ' + (table_by_user['usage'] - table_by_user['allocation']).round(1).astype(str),
-    'Within 5 KSU allocation per quarter')
-
-    # # Format table
+    'Within the ' + table_by_user['allocation'].astype(str) + ' KSU allocation per quarter')
+    
     table_by_user.columns = [col.capitalize() for col in table_by_user.columns]
-
     def highlight_over_allocation(row):
         warning = 'exceeds' in row['Status']
         return ['color: #B7533D' if warning else '' for _ in row]
-
     return table_by_user.style.apply(highlight_over_allocation, axis=1).format(precision=1).hide(axis=0)
