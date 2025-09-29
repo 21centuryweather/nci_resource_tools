@@ -8,7 +8,7 @@ module load conda/analysis3
 
 # Load a virtual python environment built on xp65 - this includes 
 # 'pymunge' library used by Scott Wales' nci tools repo
-source /g/data/gb02/public/nci_tools_env/bin/activate
+source /g/data/gb02/public/venvs/xp65_extras/bin/activate
 
 # Root directory for this repo
 export ROOT=/g/data/gb02/public/code/nci_resource_tools
