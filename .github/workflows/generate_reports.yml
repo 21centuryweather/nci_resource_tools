@@ -19,6 +19,7 @@ jobs:
           script: |
               set -e
               cd /g/data/gb02/public/code/nci_resource_tools
+              git restore docs/dashboard.ipynb
               git pull
               source ./env.sh
               quarto render docs/dashboard.ipynb --execute
