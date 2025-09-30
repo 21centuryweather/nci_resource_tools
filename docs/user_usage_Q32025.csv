@@ -1,0 +1,117 @@
+,Project,User,Usage,Allocation,Status
+0,gb02,ab2313,66.0,10.0,Usage exceeds allocation by 56.0
+1,gb02,ad0579,102.0,10.0,Usage exceeds allocation by 92.0
+2,gb02,ad1803,0.7,10.0,Within the 10.0 KSU allocation per quarter
+3,gb02,ak2642,4.6,10.0,Within the 10.0 KSU allocation per quarter
+4,gb02,as8561,6.6,10.0,Within the 10.0 KSU allocation per quarter
+5,gb02,cb4968,81.3,10.0,Usage exceeds allocation by 71.3
+6,gb02,cc6171,10.5,10.0,Usage exceeds allocation by 0.5
+7,gb02,cx5009,0.0,10.0,Within the 10.0 KSU allocation per quarter
+8,gb02,dh3280,0.1,10.0,Within the 10.0 KSU allocation per quarter
+9,gb02,dl6968,1.9,10.0,Within the 10.0 KSU allocation per quarter
+10,gb02,ec0044,6.2,10.0,Within the 10.0 KSU allocation per quarter
+11,gb02,ef1645,3.6,10.0,Within the 10.0 KSU allocation per quarter
+12,gb02,ew5299,1.6,10.0,Within the 10.0 KSU allocation per quarter
+13,gb02,fbd581,131.2,10.0,Usage exceeds allocation by 121.2
+14,gb02,gf6872,0.0,10.0,Within the 10.0 KSU allocation per quarter
+15,gb02,gs5098,116.0,10.0,Usage exceeds allocation by 106.0
+16,gb02,js2535,12.7,10.0,Usage exceeds allocation by 2.7
+17,gb02,jt0319,7.3,10.0,Within the 10.0 KSU allocation per quarter
+18,gb02,lk5320,2.2,10.0,Within the 10.0 KSU allocation per quarter
+19,gb02,lw5085,1.0,10.0,Within the 10.0 KSU allocation per quarter
+20,gb02,mh6543,2.5,10.0,Within the 10.0 KSU allocation per quarter
+21,gb02,mr4682,13.7,10.0,Usage exceeds allocation by 3.7
+22,gb02,ms5578,6.5,10.0,Within the 10.0 KSU allocation per quarter
+23,gb02,mxr581,0.0,10.0,Within the 10.0 KSU allocation per quarter
+24,gb02,nc3020,3.8,10.0,Within the 10.0 KSU allocation per quarter
+25,gb02,nt4273,18.9,10.0,Usage exceeds allocation by 8.9
+26,gb02,pag548,633.1,400.0,Usage exceeds allocation by 233.1
+27,gb02,pc2687,33.9,10.0,Usage exceeds allocation by 23.9
+28,gb02,pp7885,0.1,10.0,Within the 10.0 KSU allocation per quarter
+29,gb02,qg8515,61.7,200.0,Within the 200.0 KSU allocation per quarter
+30,gb02,rl5183,0.0,10.0,Within the 10.0 KSU allocation per quarter
+31,gb02,sc1326,0.5,10.0,Within the 10.0 KSU allocation per quarter
+32,gb02,sc5932,2.0,10.0,Within the 10.0 KSU allocation per quarter
+33,gb02,sg7549,171.4,300.0,Within the 300.0 KSU allocation per quarter
+34,gb02,sl0240,0.0,10.0,Within the 10.0 KSU allocation per quarter
+35,gb02,sl5165,665.5,10.0,Usage exceeds allocation by 655.5
+36,gb02,ss0293,63.8,10.0,Usage exceeds allocation by 53.8
+37,gb02,sv6923,0.0,10.0,Within the 10.0 KSU allocation per quarter
+38,gb02,sz2492,3.1,10.0,Within the 10.0 KSU allocation per quarter
+39,gb02,wl0799,14.2,10.0,Usage exceeds allocation by 4.2
+40,gb02,yl8842,0.1,10.0,Within the 10.0 KSU allocation per quarter
+41,fy29,bw6466,449.4,470.0,Within the 470.0 KSU allocation per quarter
+42,fy29,cr7888,23.4,50.0,Within the 50.0 KSU allocation per quarter
+43,fy29,jt0319,0.8,10.0,Within the 10.0 KSU allocation per quarter
+44,fy29,mjl561,521.4,500.0,Usage exceeds allocation by 21.4
+45,fy29,mr4682,46.3,10.0,Usage exceeds allocation by 36.3
+46,fy29,mxr581,7.1,10.0,Within the 10.0 KSU allocation per quarter
+47,fy29,nc3020,50.7,10.0,Usage exceeds allocation by 40.7
+48,fy29,pag548,0.8,50.0,Within the 50.0 KSU allocation per quarter
+49,fy29,pc2687,17.6,50.0,Within the 50.0 KSU allocation per quarter
+50,fy29,qo9901,51.0,50.0,Usage exceeds allocation by 1.0
+51,fy29,sg7549,1.3,10.0,Within the 10.0 KSU allocation per quarter
+52,fy29,sho561,1.5,10.0,Within the 10.0 KSU allocation per quarter
+53,fy29,sl0240,1.5,10.0,Within the 10.0 KSU allocation per quarter
+54,fy29,tp9488,4.0,10.0,Within the 10.0 KSU allocation per quarter
+55,fy29,txs156,17.1,10.0,Usage exceeds allocation by 7.1
+56,fy29,wl0799,1.0,10.0,Within the 10.0 KSU allocation per quarter
+57,if69,ak5887,4.4,10.0,Within the 10.0 KSU allocation per quarter
+58,if69,bx1902,21.6,10.0,Usage exceeds allocation by 11.6
+59,if69,cb4968,231.8,250.0,Within the 250.0 KSU allocation per quarter
+60,if69,cj0591,15.6,10.0,Usage exceeds allocation by 5.6
+61,if69,cr7888,0.0,10.0,Within the 10.0 KSU allocation per quarter
+62,if69,cxa561,2.0,10.0,Within the 10.0 KSU allocation per quarter
+63,if69,ef7927,13.3,10.0,Usage exceeds allocation by 3.3
+64,if69,ft3359,0.2,10.0,Within the 10.0 KSU allocation per quarter
+65,if69,gs5098,256.2,250.0,Usage exceeds allocation by 6.2
+66,if69,jn3312,0.0,10.0,Within the 10.0 KSU allocation per quarter
+67,if69,kt3973,278.7,300.0,Within the 300.0 KSU allocation per quarter
+68,if69,lr0632,0.4,10.0,Within the 10.0 KSU allocation per quarter
+69,if69,ls3248,0.3,10.0,Within the 10.0 KSU allocation per quarter
+70,if69,mb0427,8.7,10.0,Within the 10.0 KSU allocation per quarter
+71,if69,mf3225,0.0,10.0,Within the 10.0 KSU allocation per quarter
+72,if69,mm6452,3.4,10.0,Within the 10.0 KSU allocation per quarter
+73,if69,mm7092,0.2,10.0,Within the 10.0 KSU allocation per quarter
+74,if69,mr4682,60.3,60.0,Usage exceeds allocation by 0.3
+75,if69,nxg561,69.6,10.0,Usage exceeds allocation by 59.6
+76,if69,qj2249,25.1,10.0,Usage exceeds allocation by 15.1
+77,if69,qo9901,39.6,15.0,Usage exceeds allocation by 24.6
+78,if69,rk9077,15.0,10.0,Usage exceeds allocation by 5.0
+79,if69,rq1991,22.6,10.0,Usage exceeds allocation by 12.6
+80,if69,sc1326,13.1,10.0,Usage exceeds allocation by 3.1
+81,if69,td6427,66.2,50.0,Usage exceeds allocation by 16.2
+82,if69,tp4064,5.7,10.0,Within the 10.0 KSU allocation per quarter
+83,if69,ym7079,95.9,100.0,Within the 100.0 KSU allocation per quarter
+84,ng72,ab4502,61.8,10.0,Usage exceeds allocation by 51.8
+85,ng72,ad0579,0.1,10.0,Within the 10.0 KSU allocation per quarter
+86,ng72,ag3979,1.2,10.0,Within the 10.0 KSU allocation per quarter
+87,ng72,ajg565,0.0,10.0,Within the 10.0 KSU allocation per quarter
+88,ng72,as9583,116.9,200.0,Within the 200.0 KSU allocation per quarter
+89,ng72,cd3007,39.1,25.0,Usage exceeds allocation by 14.1
+90,ng72,cp9270,1.1,10.0,Within the 10.0 KSU allocation per quarter
+91,ng72,cxh603,43.9,10.0,Usage exceeds allocation by 33.9
+92,ng72,dr6273,0.2,10.0,Within the 10.0 KSU allocation per quarter
+93,ng72,gs5098,226.9,350.0,Within the 350.0 KSU allocation per quarter
+94,ng72,hc0407,4.1,10.0,Within the 10.0 KSU allocation per quarter
+95,ng72,jd2435,0.0,10.0,Within the 10.0 KSU allocation per quarter
+96,ng72,jpe561,12.8,10.0,Usage exceeds allocation by 2.8
+97,ng72,js2535,3.3,10.0,Within the 10.0 KSU allocation per quarter
+98,ng72,js5018,2.4,10.0,Within the 10.0 KSU allocation per quarter
+99,ng72,kr2086,1.5,10.0,Within the 10.0 KSU allocation per quarter
+100,ng72,lk5320,3.9,10.0,Within the 10.0 KSU allocation per quarter
+101,ng72,mf9479,1.0,10.0,Within the 10.0 KSU allocation per quarter
+102,ng72,mr4682,24.8,10.0,Usage exceeds allocation by 14.8
+103,ng72,ms5578,0.1,10.0,Within the 10.0 KSU allocation per quarter
+104,ng72,nt4273,0.4,10.0,Within the 10.0 KSU allocation per quarter
+105,ng72,oa1927,21.3,10.0,Usage exceeds allocation by 11.3
+106,ng72,pv3484,0.0,10.0,Within the 10.0 KSU allocation per quarter
+107,ng72,qg8515,9.8,10.0,Within the 10.0 KSU allocation per quarter
+108,ng72,ri9247,4.1,10.0,Within the 10.0 KSU allocation per quarter
+109,ng72,sk6139,0.3,10.0,Within the 10.0 KSU allocation per quarter
+110,ng72,sz2492,7.4,10.0,Within the 10.0 KSU allocation per quarter
+111,ng72,wz4975,0.1,10.0,Within the 10.0 KSU allocation per quarter
+112,ng72,xw6141,80.2,10.0,Usage exceeds allocation by 70.2
+113,ng72,ym7079,560.6,550.0,Usage exceeds allocation by 10.6
+114,ng72,yz1881,0.0,10.0,Within the 10.0 KSU allocation per quarter
+115,ng72,zz6006,3.7,10.0,Within the 10.0 KSU allocation per quarter
