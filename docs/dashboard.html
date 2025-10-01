@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.7.13">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -31,22 +31,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="dashboard_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="dashboard_files/libs/quarto-html/anchor.min.js"></script>
 <link href="dashboard_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="dashboard_files/libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="dashboard_files/libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="dashboard_files/libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="dashboard_files/libs/quarto-html/quarto-syntax-highlighting-66ab7fd5e73b7f0a764e0d49b3e29ab1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="dashboard_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="dashboard_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="dashboard_files/libs/bootstrap/bootstrap-dee352a49f6546e6834e9f2871a0f6b3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="dashboard_files/libs/bootstrap/bootstrap-dark-dee352a49f6546e6834e9f2871a0f6b3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="dashboard_files/libs/bootstrap/bootstrap-dee352a49f6546e6834e9f2871a0f6b3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="dashboard_files/libs/bootstrap/bootstrap-dbade09cf99aac605b0c04ff4dc09efc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="dashboard_files/libs/quarto-dashboard/quarto-dashboard.js"></script>
 <script src="dashboard_files/libs/quarto-dashboard/stickythead.js"></script>
-
-
-
+<script src="dashboard_files/libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
+<script src="dashboard_files/libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
+<script src="dashboard_files/libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
 <script src="dashboard_files/libs/quarto-dashboard/web-components.js" type="module"></script>
 <script src="dashboard_files/libs/quarto-dashboard/components.js"></script>
-
+<link href="dashboard_files/libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -54,7 +50,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="quarto-dashboard dashboard-fill fullcontent quarto-light">
+<body class="quarto-dashboard dashboard-fill fullcontent">
 
 <header id="quarto-dashboard-header">
 <nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
@@ -90,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="tab-content html-fill-item html-fill-container" data-tabset-id="card-tabset-1"><div class="tab-pane active show html-fill-item html-fill-container" role="tabpanel" id="card-tabset-1-1"><div class="card-body html-fill-item html-fill-container" data-title="SU usage">
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 20fr) minmax(3em, 20fr) minmax(3em, 60fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="8">
@@ -112,88 +108,24 @@ grid-auto-rows: minmax(0, 1fr);">
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="3" data-quarto-table-cell-role="th" data-valign="top">gb02</td>
-<td data-quarto-table-cell-role="th">pag548</td>
-<td>400</td>
+<td data-quarto-table-cell-role="th">gb02</td>
+<td data-quarto-table-cell-role="th">NaN</td>
+<td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">sg7549</td>
-<td>300</td>
+<td data-quarto-table-cell-role="th">fy29</td>
+<td data-quarto-table-cell-role="th">ARE</td>
+<td>50.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">qg8515</td>
-<td>200</td>
+<td data-quarto-table-cell-role="th">if69</td>
+<td data-quarto-table-cell-role="th">NaN</td>
+<td>NaN</td>
 </tr>
 <tr class="even">
-<td rowspan="6" data-quarto-table-cell-role="th" data-valign="top">fy29</td>
-<td data-quarto-table-cell-role="th">bw6466</td>
-<td>320</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">mjl561</td>
-<td>500</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">cr7888</td>
-<td>50</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">qo9901</td>
-<td>50</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">pag548</td>
-<td>50</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">pc2687</td>
-<td>50</td>
-</tr>
-<tr class="even">
-<td rowspan="7" data-quarto-table-cell-role="th" data-valign="top">if69</td>
-<td data-quarto-table-cell-role="th">kt3973</td>
-<td>300</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">cb4968</td>
-<td>250</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">gs5098</td>
-<td>250</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">mr4682</td>
-<td>60</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">td6427</td>
-<td>50</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">ym7079</td>
-<td>100</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">qo9901</td>
-<td>15</td>
-</tr>
-<tr class="odd">
-<td rowspan="4" data-quarto-table-cell-role="th" data-valign="top">ng72</td>
-<td data-quarto-table-cell-role="th">ym7079</td>
-<td>550</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">as9583</td>
-<td>200</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">gs5098</td>
-<td>350</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">cd3007</td>
-<td>25</td>
+<td data-quarto-table-cell-role="th">ng72</td>
+<td data-quarto-table-cell-role="th">NaN</td>
+<td>NaN</td>
 </tr>
 </tbody>
 </table>
@@ -207,44 +139,20 @@ grid-auto-rows: minmax(0, 1fr);">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
     </span>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
-<pre><code>CRITICAL : pag548 has consumed 158.27% of their gb02 SU allocation
-CRITICAL : bw6466 has consumed 140.43% of their fy29 SU allocation
-CRITICAL : mjl561 has consumed 104.27% of their fy29 SU allocation
-WARNING : qo9901 has consumed 91.84% of their fy29 SU allocation
-WARNING : cb4968 has consumed 92.71% of their if69 SU allocation
-CRITICAL : gs5098 has consumed 102.48% of their if69 SU allocation
-WARNING : kt3973 has consumed 92.90% of their if69 SU allocation
-CRITICAL : mr4682 has consumed 100.54% of their if69 SU allocation
-CRITICAL : qo9901 has consumed 264.24% of their if69 SU allocation
-CRITICAL : td6427 has consumed 132.32% of their if69 SU allocation
-WARNING : ym7079 has consumed 95.88% of their if69 SU allocation
-CRITICAL : cd3007 has consumed 154.53% of their ng72 SU allocation
-CRITICAL : ym7079 has consumed 102.41% of their ng72 SU allocation</code></pre>
-</div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div><div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="dashboard_files/figure-html/cell-11-output-1.png" class="quarto-dashboard-img-contain">
+<pre><code>&lt;Figure size 1152x0 with 0 Axes&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="dashboard_files/figure-html/cell-11-output-2.png" class="quarto-dashboard-img-contain">
+<pre><code>&lt;Figure size 1152x0 with 0 Axes&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="dashboard_files/figure-html/cell-11-output-3.png" class="quarto-dashboard-img-contain">
+<pre><code>&lt;Figure size 1152x0 with 0 Axes&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="dashboard_files/figure-html/cell-11-output-4.png" class="quarto-dashboard-img-contain">
+<pre><code>&lt;Figure size 1152x0 with 0 Axes&gt;</code></pre>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -288,7 +196,7 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
 <!--| quarto-html-table-processing: none -->
-<table id="T_c28e0"><tbody><tr>
+<table id="T_bd0e5"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     
     Loading ITables v2.5.2 from the internet...
@@ -298,11 +206,11 @@ grid-auto-rows: minmax(0, 1fr);">
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.4.0/dt_bundle.js';
 
-    document.querySelectorAll("#T_c28e0:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#T_bd0e5:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
-        let dt_args = {"columnControl": [{"target": 0, "content": ["order"]}, {"target": 1, "content": ["search"]}], "ordering": {"indicators": false, "handler": false}, "scrollY": "600px", "paging": false, "columnDefs": [{"width": "40%", "targets": [4]}], "style": {"width": "100%", "margin": "auto"}, "layout": {"topStart": "buttons", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "text_in_header_can_be_selected": true, "keys": true, "lengthChange": false, "searching": true, "language": {"info": "Showing _TOTAL_ entries"}, "dom": "fiBrtlp", "buttons": [], "order": [], "autoWidth": false, "classes": ["display", "nowrap", "compact"], "responsive": true, "info": true, "table_style": "\n#T_c28e0_row0_col0, #T_c28e0_row0_col1, #T_c28e0_row0_col2, #T_c28e0_row0_col3, #T_c28e0_row0_col4, #T_c28e0_row1_col0, #T_c28e0_row1_col1, #T_c28e0_row1_col2, #T_c28e0_row1_col3, #T_c28e0_row1_col4, #T_c28e0_row4_col0, #T_c28e0_row4_col1, #T_c28e0_row4_col2, #T_c28e0_row4_col3, #T_c28e0_row4_col4, #T_c28e0_row5_col0, #T_c28e0_row5_col1, #T_c28e0_row5_col2, #T_c28e0_row5_col3, #T_c28e0_row5_col4, #T_c28e0_row6_col0, #T_c28e0_row6_col1, #T_c28e0_row6_col2, #T_c28e0_row6_col3, #T_c28e0_row6_col4, #T_c28e0_row10_col0, #T_c28e0_row10_col1, #T_c28e0_row10_col2, #T_c28e0_row10_col3, #T_c28e0_row10_col4, #T_c28e0_row13_col0, #T_c28e0_row13_col1, #T_c28e0_row13_col2, #T_c28e0_row13_col3, #T_c28e0_row13_col4, #T_c28e0_row15_col0, #T_c28e0_row15_col1, #T_c28e0_row15_col2, #T_c28e0_row15_col3, #T_c28e0_row15_col4, #T_c28e0_row16_col0, #T_c28e0_row16_col1, #T_c28e0_row16_col2, #T_c28e0_row16_col3, #T_c28e0_row16_col4, #T_c28e0_row17_col0, #T_c28e0_row17_col1, #T_c28e0_row17_col2, #T_c28e0_row17_col3, #T_c28e0_row17_col4, #T_c28e0_row21_col0, #T_c28e0_row21_col1, #T_c28e0_row21_col2, #T_c28e0_row21_col3, #T_c28e0_row21_col4, #T_c28e0_row22_col0, #T_c28e0_row22_col1, #T_c28e0_row22_col2, #T_c28e0_row22_col3, #T_c28e0_row22_col4, #T_c28e0_row25_col0, #T_c28e0_row25_col1, #T_c28e0_row25_col2, #T_c28e0_row25_col3, #T_c28e0_row25_col4, #T_c28e0_row26_col0, #T_c28e0_row26_col1, #T_c28e0_row26_col2, #T_c28e0_row26_col3, #T_c28e0_row26_col4, #T_c28e0_row27_col0, #T_c28e0_row27_col1, #T_c28e0_row27_col2, #T_c28e0_row27_col3, #T_c28e0_row27_col4, #T_c28e0_row35_col0, #T_c28e0_row35_col1, #T_c28e0_row35_col2, #T_c28e0_row35_col3, #T_c28e0_row35_col4, #T_c28e0_row36_col0, #T_c28e0_row36_col1, #T_c28e0_row36_col2, #T_c28e0_row36_col3, #T_c28e0_row36_col4, #T_c28e0_row39_col0, #T_c28e0_row39_col1, #T_c28e0_row39_col2, #T_c28e0_row39_col3, #T_c28e0_row39_col4, #T_c28e0_row41_col0, #T_c28e0_row41_col1, #T_c28e0_row41_col2, #T_c28e0_row41_col3, #T_c28e0_row41_col4, #T_c28e0_row44_col0, #T_c28e0_row44_col1, #T_c28e0_row44_col2, #T_c28e0_row44_col3, #T_c28e0_row44_col4, #T_c28e0_row45_col0, #T_c28e0_row45_col1, #T_c28e0_row45_col2, #T_c28e0_row45_col3, #T_c28e0_row45_col4, #T_c28e0_row46_col0, #T_c28e0_row46_col1, #T_c28e0_row46_col2, #T_c28e0_row46_col3, #T_c28e0_row46_col4, #T_c28e0_row47_col0, #T_c28e0_row47_col1, #T_c28e0_row47_col2, #T_c28e0_row47_col3, #T_c28e0_row47_col4, #T_c28e0_row55_col0, #T_c28e0_row55_col1, #T_c28e0_row55_col2, #T_c28e0_row55_col3, #T_c28e0_row55_col4, #T_c28e0_row58_col0, #T_c28e0_row58_col1, #T_c28e0_row58_col2, #T_c28e0_row58_col3, #T_c28e0_row58_col4, #T_c28e0_row60_col0, #T_c28e0_row60_col1, #T_c28e0_row60_col2, #T_c28e0_row60_col3, #T_c28e0_row60_col4, #T_c28e0_row63_col0, #T_c28e0_row63_col1, #T_c28e0_row63_col2, #T_c28e0_row63_col3, #T_c28e0_row63_col4, #T_c28e0_row65_col0, #T_c28e0_row65_col1, #T_c28e0_row65_col2, #T_c28e0_row65_col3, #T_c28e0_row65_col4, #T_c28e0_row70_col0, #T_c28e0_row70_col1, #T_c28e0_row70_col2, #T_c28e0_row70_col3, #T_c28e0_row70_col4, #T_c28e0_row74_col0, #T_c28e0_row74_col1, #T_c28e0_row74_col2, #T_c28e0_row74_col3, #T_c28e0_row74_col4, #T_c28e0_row75_col0, #T_c28e0_row75_col1, #T_c28e0_row75_col2, #T_c28e0_row75_col3, #T_c28e0_row75_col4, #T_c28e0_row76_col0, #T_c28e0_row76_col1, #T_c28e0_row76_col2, #T_c28e0_row76_col3, #T_c28e0_row76_col4, #T_c28e0_row77_col0, #T_c28e0_row77_col1, #T_c28e0_row77_col2, #T_c28e0_row77_col3, #T_c28e0_row77_col4, #T_c28e0_row78_col0, #T_c28e0_row78_col1, #T_c28e0_row78_col2, #T_c28e0_row78_col3, #T_c28e0_row78_col4, #T_c28e0_row79_col0, #T_c28e0_row79_col1, #T_c28e0_row79_col2, #T_c28e0_row79_col3, #T_c28e0_row79_col4, #T_c28e0_row80_col0, #T_c28e0_row80_col1, #T_c28e0_row80_col2, #T_c28e0_row80_col3, #T_c28e0_row80_col4, #T_c28e0_row81_col0, #T_c28e0_row81_col1, #T_c28e0_row81_col2, #T_c28e0_row81_col3, #T_c28e0_row81_col4, #T_c28e0_row82_col0, #T_c28e0_row82_col1, #T_c28e0_row82_col2, #T_c28e0_row82_col3, #T_c28e0_row82_col4, #T_c28e0_row84_col0, #T_c28e0_row84_col1, #T_c28e0_row84_col2, #T_c28e0_row84_col3, #T_c28e0_row84_col4, #T_c28e0_row89_col0, #T_c28e0_row89_col1, #T_c28e0_row89_col2, #T_c28e0_row89_col3, #T_c28e0_row89_col4, #T_c28e0_row91_col0, #T_c28e0_row91_col1, #T_c28e0_row91_col2, #T_c28e0_row91_col3, #T_c28e0_row91_col4, #T_c28e0_row96_col0, #T_c28e0_row96_col1, #T_c28e0_row96_col2, #T_c28e0_row96_col3, #T_c28e0_row96_col4, #T_c28e0_row102_col0, #T_c28e0_row102_col1, #T_c28e0_row102_col2, #T_c28e0_row102_col3, #T_c28e0_row102_col4, #T_c28e0_row105_col0, #T_c28e0_row105_col1, #T_c28e0_row105_col2, #T_c28e0_row105_col3, #T_c28e0_row105_col4, #T_c28e0_row107_col0, #T_c28e0_row107_col1, #T_c28e0_row107_col2, #T_c28e0_row107_col3, #T_c28e0_row107_col4, #T_c28e0_row110_col0, #T_c28e0_row110_col1, #T_c28e0_row110_col2, #T_c28e0_row110_col3, #T_c28e0_row110_col4, #T_c28e0_row112_col0, #T_c28e0_row112_col1, #T_c28e0_row112_col2, #T_c28e0_row112_col3, #T_c28e0_row112_col4, #T_c28e0_row113_col0, #T_c28e0_row113_col1, #T_c28e0_row113_col2, #T_c28e0_row113_col3, #T_c28e0_row113_col4 {\n  color: #B7533D;\n}\n", "table_html": "\n<table id=\"T_c28e0\">\n  <thead>\n    <tr>\n      <th id=\"T_c28e0_level0_col0\" class=\"col_heading level0 col0\" >Project</th>\n      <th id=\"T_c28e0_level0_col1\" class=\"col_heading level0 col1\" >User</th>\n      <th id=\"T_c28e0_level0_col2\" class=\"col_heading level0 col2\" >Usage</th>\n      <th id=\"T_c28e0_level0_col3\" class=\"col_heading level0 col3\" >Allocation</th>\n      <th id=\"T_c28e0_level0_col4\" class=\"col_heading level0 col4\" >Status</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td id=\"T_c28e0_row0_col0\" class=\"data row0 col0\" >gb02</td>\n      <td id=\"T_c28e0_row0_col1\" class=\"data row0 col1\" >ab2313</td>\n      <td id=\"T_c28e0_row0_col2\" class=\"data row0 col2\" >66.0</td>\n      <td id=\"T_c28e0_row0_col3\" class=\"data row0 col3\" >5.0</td>\n      <td id=\"T_c28e0_row0_col4\" class=\"data row0 col4\" >Usage exceeds allocation by 61.0</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row1_col0\" class=\"data row1 col0\" >gb02</td>\n      <td id=\"T_c28e0_row1_col1\" class=\"data row1 col1\" >ad0579</td>\n      <td id=\"T_c28e0_row1_col2\" class=\"data row1 col2\" >102.0</td>\n      <td id=\"T_c28e0_row1_col3\" class=\"data row1 col3\" >5.0</td>\n      <td id=\"T_c28e0_row1_col4\" class=\"data row1 col4\" >Usage exceeds allocation by 97.0</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row2_col0\" class=\"data row2 col0\" >gb02</td>\n      <td id=\"T_c28e0_row2_col1\" class=\"data row2 col1\" >ad1803</td>\n      <td id=\"T_c28e0_row2_col2\" class=\"data row2 col2\" >0.7</td>\n      <td id=\"T_c28e0_row2_col3\" class=\"data row2 col3\" >5.0</td>\n      <td id=\"T_c28e0_row2_col4\" class=\"data row2 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row3_col0\" class=\"data row3 col0\" >gb02</td>\n      <td id=\"T_c28e0_row3_col1\" class=\"data row3 col1\" >ak2642</td>\n      <td id=\"T_c28e0_row3_col2\" class=\"data row3 col2\" >4.6</td>\n      <td id=\"T_c28e0_row3_col3\" class=\"data row3 col3\" >5.0</td>\n      <td id=\"T_c28e0_row3_col4\" class=\"data row3 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row4_col0\" class=\"data row4 col0\" >gb02</td>\n      <td id=\"T_c28e0_row4_col1\" class=\"data row4 col1\" >as8561</td>\n      <td id=\"T_c28e0_row4_col2\" class=\"data row4 col2\" >6.6</td>\n      <td id=\"T_c28e0_row4_col3\" class=\"data row4 col3\" >5.0</td>\n      <td id=\"T_c28e0_row4_col4\" class=\"data row4 col4\" >Usage exceeds allocation by 1.6</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row5_col0\" class=\"data row5 col0\" >gb02</td>\n      <td id=\"T_c28e0_row5_col1\" class=\"data row5 col1\" >cb4968</td>\n      <td id=\"T_c28e0_row5_col2\" class=\"data row5 col2\" >81.3</td>\n      <td id=\"T_c28e0_row5_col3\" class=\"data row5 col3\" >5.0</td>\n      <td id=\"T_c28e0_row5_col4\" class=\"data row5 col4\" >Usage exceeds allocation by 76.3</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row6_col0\" class=\"data row6 col0\" >gb02</td>\n      <td id=\"T_c28e0_row6_col1\" class=\"data row6 col1\" >cc6171</td>\n      <td id=\"T_c28e0_row6_col2\" class=\"data row6 col2\" >10.5</td>\n      <td id=\"T_c28e0_row6_col3\" class=\"data row6 col3\" >5.0</td>\n      <td id=\"T_c28e0_row6_col4\" class=\"data row6 col4\" >Usage exceeds allocation by 5.5</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row7_col0\" class=\"data row7 col0\" >gb02</td>\n      <td id=\"T_c28e0_row7_col1\" class=\"data row7 col1\" >cx5009</td>\n      <td id=\"T_c28e0_row7_col2\" class=\"data row7 col2\" >0.0</td>\n      <td id=\"T_c28e0_row7_col3\" class=\"data row7 col3\" >5.0</td>\n      <td id=\"T_c28e0_row7_col4\" class=\"data row7 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row8_col0\" class=\"data row8 col0\" >gb02</td>\n      <td id=\"T_c28e0_row8_col1\" class=\"data row8 col1\" >dh3280</td>\n      <td id=\"T_c28e0_row8_col2\" class=\"data row8 col2\" >0.1</td>\n      <td id=\"T_c28e0_row8_col3\" class=\"data row8 col3\" >5.0</td>\n      <td id=\"T_c28e0_row8_col4\" class=\"data row8 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row9_col0\" class=\"data row9 col0\" >gb02</td>\n      <td id=\"T_c28e0_row9_col1\" class=\"data row9 col1\" >dl6968</td>\n      <td id=\"T_c28e0_row9_col2\" class=\"data row9 col2\" >1.9</td>\n      <td id=\"T_c28e0_row9_col3\" class=\"data row9 col3\" >5.0</td>\n      <td id=\"T_c28e0_row9_col4\" class=\"data row9 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row10_col0\" class=\"data row10 col0\" >gb02</td>\n      <td id=\"T_c28e0_row10_col1\" class=\"data row10 col1\" >ec0044</td>\n      <td id=\"T_c28e0_row10_col2\" class=\"data row10 col2\" >6.2</td>\n      <td id=\"T_c28e0_row10_col3\" class=\"data row10 col3\" >5.0</td>\n      <td id=\"T_c28e0_row10_col4\" class=\"data row10 col4\" >Usage exceeds allocation by 1.2</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row11_col0\" class=\"data row11 col0\" >gb02</td>\n      <td id=\"T_c28e0_row11_col1\" class=\"data row11 col1\" >ef1645</td>\n      <td id=\"T_c28e0_row11_col2\" class=\"data row11 col2\" >3.6</td>\n      <td id=\"T_c28e0_row11_col3\" class=\"data row11 col3\" >5.0</td>\n      <td id=\"T_c28e0_row11_col4\" class=\"data row11 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row12_col0\" class=\"data row12 col0\" >gb02</td>\n      <td id=\"T_c28e0_row12_col1\" class=\"data row12 col1\" >ew5299</td>\n      <td id=\"T_c28e0_row12_col2\" class=\"data row12 col2\" >1.6</td>\n      <td id=\"T_c28e0_row12_col3\" class=\"data row12 col3\" >5.0</td>\n      <td id=\"T_c28e0_row12_col4\" class=\"data row12 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row13_col0\" class=\"data row13 col0\" >gb02</td>\n      <td id=\"T_c28e0_row13_col1\" class=\"data row13 col1\" >fbd581</td>\n      <td id=\"T_c28e0_row13_col2\" class=\"data row13 col2\" >131.2</td>\n      <td id=\"T_c28e0_row13_col3\" class=\"data row13 col3\" >5.0</td>\n      <td id=\"T_c28e0_row13_col4\" class=\"data row13 col4\" >Usage exceeds allocation by 126.2</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row14_col0\" class=\"data row14 col0\" >gb02</td>\n      <td id=\"T_c28e0_row14_col1\" class=\"data row14 col1\" >gf6872</td>\n      <td id=\"T_c28e0_row14_col2\" class=\"data row14 col2\" >0.0</td>\n      <td id=\"T_c28e0_row14_col3\" class=\"data row14 col3\" >5.0</td>\n      <td id=\"T_c28e0_row14_col4\" class=\"data row14 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row15_col0\" class=\"data row15 col0\" >gb02</td>\n      <td id=\"T_c28e0_row15_col1\" class=\"data row15 col1\" >gs5098</td>\n      <td id=\"T_c28e0_row15_col2\" class=\"data row15 col2\" >116.0</td>\n      <td id=\"T_c28e0_row15_col3\" class=\"data row15 col3\" >5.0</td>\n      <td id=\"T_c28e0_row15_col4\" class=\"data row15 col4\" >Usage exceeds allocation by 111.0</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row16_col0\" class=\"data row16 col0\" >gb02</td>\n      <td id=\"T_c28e0_row16_col1\" class=\"data row16 col1\" >js2535</td>\n      <td id=\"T_c28e0_row16_col2\" class=\"data row16 col2\" >12.7</td>\n      <td id=\"T_c28e0_row16_col3\" class=\"data row16 col3\" >5.0</td>\n      <td id=\"T_c28e0_row16_col4\" class=\"data row16 col4\" >Usage exceeds allocation by 7.7</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row17_col0\" class=\"data row17 col0\" >gb02</td>\n      <td id=\"T_c28e0_row17_col1\" class=\"data row17 col1\" >jt0319</td>\n      <td id=\"T_c28e0_row17_col2\" class=\"data row17 col2\" >7.3</td>\n      <td id=\"T_c28e0_row17_col3\" class=\"data row17 col3\" >5.0</td>\n      <td id=\"T_c28e0_row17_col4\" class=\"data row17 col4\" >Usage exceeds allocation by 2.3</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row18_col0\" class=\"data row18 col0\" >gb02</td>\n      <td id=\"T_c28e0_row18_col1\" class=\"data row18 col1\" >lk5320</td>\n      <td id=\"T_c28e0_row18_col2\" class=\"data row18 col2\" >2.2</td>\n      <td id=\"T_c28e0_row18_col3\" class=\"data row18 col3\" >5.0</td>\n      <td id=\"T_c28e0_row18_col4\" class=\"data row18 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row19_col0\" class=\"data row19 col0\" >gb02</td>\n      <td id=\"T_c28e0_row19_col1\" class=\"data row19 col1\" >lw5085</td>\n      <td id=\"T_c28e0_row19_col2\" class=\"data row19 col2\" >1.0</td>\n      <td id=\"T_c28e0_row19_col3\" class=\"data row19 col3\" >5.0</td>\n      <td id=\"T_c28e0_row19_col4\" class=\"data row19 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row20_col0\" class=\"data row20 col0\" >gb02</td>\n      <td id=\"T_c28e0_row20_col1\" class=\"data row20 col1\" >mh6543</td>\n      <td id=\"T_c28e0_row20_col2\" class=\"data row20 col2\" >2.5</td>\n      <td id=\"T_c28e0_row20_col3\" class=\"data row20 col3\" >5.0</td>\n      <td id=\"T_c28e0_row20_col4\" class=\"data row20 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row21_col0\" class=\"data row21 col0\" >gb02</td>\n      <td id=\"T_c28e0_row21_col1\" class=\"data row21 col1\" >mr4682</td>\n      <td id=\"T_c28e0_row21_col2\" class=\"data row21 col2\" >13.7</td>\n      <td id=\"T_c28e0_row21_col3\" class=\"data row21 col3\" >5.0</td>\n      <td id=\"T_c28e0_row21_col4\" class=\"data row21 col4\" >Usage exceeds allocation by 8.7</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row22_col0\" class=\"data row22 col0\" >gb02</td>\n      <td id=\"T_c28e0_row22_col1\" class=\"data row22 col1\" >ms5578</td>\n      <td id=\"T_c28e0_row22_col2\" class=\"data row22 col2\" >6.5</td>\n      <td id=\"T_c28e0_row22_col3\" class=\"data row22 col3\" >5.0</td>\n      <td id=\"T_c28e0_row22_col4\" class=\"data row22 col4\" >Usage exceeds allocation by 1.5</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row23_col0\" class=\"data row23 col0\" >gb02</td>\n      <td id=\"T_c28e0_row23_col1\" class=\"data row23 col1\" >mxr581</td>\n      <td id=\"T_c28e0_row23_col2\" class=\"data row23 col2\" >0.0</td>\n      <td id=\"T_c28e0_row23_col3\" class=\"data row23 col3\" >5.0</td>\n      <td id=\"T_c28e0_row23_col4\" class=\"data row23 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row24_col0\" class=\"data row24 col0\" >gb02</td>\n      <td id=\"T_c28e0_row24_col1\" class=\"data row24 col1\" >nc3020</td>\n      <td id=\"T_c28e0_row24_col2\" class=\"data row24 col2\" >3.8</td>\n      <td id=\"T_c28e0_row24_col3\" class=\"data row24 col3\" >5.0</td>\n      <td id=\"T_c28e0_row24_col4\" class=\"data row24 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row25_col0\" class=\"data row25 col0\" >gb02</td>\n      <td id=\"T_c28e0_row25_col1\" class=\"data row25 col1\" >nt4273</td>\n      <td id=\"T_c28e0_row25_col2\" class=\"data row25 col2\" >18.9</td>\n      <td id=\"T_c28e0_row25_col3\" class=\"data row25 col3\" >5.0</td>\n      <td id=\"T_c28e0_row25_col4\" class=\"data row25 col4\" >Usage exceeds allocation by 13.9</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row26_col0\" class=\"data row26 col0\" >gb02</td>\n      <td id=\"T_c28e0_row26_col1\" class=\"data row26 col1\" >pag548</td>\n      <td id=\"T_c28e0_row26_col2\" class=\"data row26 col2\" >633.1</td>\n      <td id=\"T_c28e0_row26_col3\" class=\"data row26 col3\" >400.0</td>\n      <td id=\"T_c28e0_row26_col4\" class=\"data row26 col4\" >Usage exceeds allocation by 233.1</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row27_col0\" class=\"data row27 col0\" >gb02</td>\n      <td id=\"T_c28e0_row27_col1\" class=\"data row27 col1\" >pc2687</td>\n      <td id=\"T_c28e0_row27_col2\" class=\"data row27 col2\" >33.9</td>\n      <td id=\"T_c28e0_row27_col3\" class=\"data row27 col3\" >5.0</td>\n      <td id=\"T_c28e0_row27_col4\" class=\"data row27 col4\" >Usage exceeds allocation by 28.9</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row28_col0\" class=\"data row28 col0\" >gb02</td>\n      <td id=\"T_c28e0_row28_col1\" class=\"data row28 col1\" >pp7885</td>\n      <td id=\"T_c28e0_row28_col2\" class=\"data row28 col2\" >0.1</td>\n      <td id=\"T_c28e0_row28_col3\" class=\"data row28 col3\" >5.0</td>\n      <td id=\"T_c28e0_row28_col4\" class=\"data row28 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row29_col0\" class=\"data row29 col0\" >gb02</td>\n      <td id=\"T_c28e0_row29_col1\" class=\"data row29 col1\" >qg8515</td>\n      <td id=\"T_c28e0_row29_col2\" class=\"data row29 col2\" >61.7</td>\n      <td id=\"T_c28e0_row29_col3\" class=\"data row29 col3\" >200.0</td>\n      <td id=\"T_c28e0_row29_col4\" class=\"data row29 col4\" >Within the 200.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row30_col0\" class=\"data row30 col0\" >gb02</td>\n      <td id=\"T_c28e0_row30_col1\" class=\"data row30 col1\" >rl5183</td>\n      <td id=\"T_c28e0_row30_col2\" class=\"data row30 col2\" >0.0</td>\n      <td id=\"T_c28e0_row30_col3\" class=\"data row30 col3\" >5.0</td>\n      <td id=\"T_c28e0_row30_col4\" class=\"data row30 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row31_col0\" class=\"data row31 col0\" >gb02</td>\n      <td id=\"T_c28e0_row31_col1\" class=\"data row31 col1\" >sc1326</td>\n      <td id=\"T_c28e0_row31_col2\" class=\"data row31 col2\" >0.5</td>\n      <td id=\"T_c28e0_row31_col3\" class=\"data row31 col3\" >5.0</td>\n      <td id=\"T_c28e0_row31_col4\" class=\"data row31 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row32_col0\" class=\"data row32 col0\" >gb02</td>\n      <td id=\"T_c28e0_row32_col1\" class=\"data row32 col1\" >sc5932</td>\n      <td id=\"T_c28e0_row32_col2\" class=\"data row32 col2\" >2.0</td>\n      <td id=\"T_c28e0_row32_col3\" class=\"data row32 col3\" >5.0</td>\n      <td id=\"T_c28e0_row32_col4\" class=\"data row32 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row33_col0\" class=\"data row33 col0\" >gb02</td>\n      <td id=\"T_c28e0_row33_col1\" class=\"data row33 col1\" >sg7549</td>\n      <td id=\"T_c28e0_row33_col2\" class=\"data row33 col2\" >171.4</td>\n      <td id=\"T_c28e0_row33_col3\" class=\"data row33 col3\" >300.0</td>\n      <td id=\"T_c28e0_row33_col4\" class=\"data row33 col4\" >Within the 300.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row34_col0\" class=\"data row34 col0\" >gb02</td>\n      <td id=\"T_c28e0_row34_col1\" class=\"data row34 col1\" >sl0240</td>\n      <td id=\"T_c28e0_row34_col2\" class=\"data row34 col2\" >0.0</td>\n      <td id=\"T_c28e0_row34_col3\" class=\"data row34 col3\" >5.0</td>\n      <td id=\"T_c28e0_row34_col4\" class=\"data row34 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row35_col0\" class=\"data row35 col0\" >gb02</td>\n      <td id=\"T_c28e0_row35_col1\" class=\"data row35 col1\" >sl5165</td>\n      <td id=\"T_c28e0_row35_col2\" class=\"data row35 col2\" >665.5</td>\n      <td id=\"T_c28e0_row35_col3\" class=\"data row35 col3\" >5.0</td>\n      <td id=\"T_c28e0_row35_col4\" class=\"data row35 col4\" >Usage exceeds allocation by 660.5</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row36_col0\" class=\"data row36 col0\" >gb02</td>\n      <td id=\"T_c28e0_row36_col1\" class=\"data row36 col1\" >ss0293</td>\n      <td id=\"T_c28e0_row36_col2\" class=\"data row36 col2\" >63.8</td>\n      <td id=\"T_c28e0_row36_col3\" class=\"data row36 col3\" >5.0</td>\n      <td id=\"T_c28e0_row36_col4\" class=\"data row36 col4\" >Usage exceeds allocation by 58.8</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row37_col0\" class=\"data row37 col0\" >gb02</td>\n      <td id=\"T_c28e0_row37_col1\" class=\"data row37 col1\" >sv6923</td>\n      <td id=\"T_c28e0_row37_col2\" class=\"data row37 col2\" >0.0</td>\n      <td id=\"T_c28e0_row37_col3\" class=\"data row37 col3\" >5.0</td>\n      <td id=\"T_c28e0_row37_col4\" class=\"data row37 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row38_col0\" class=\"data row38 col0\" >gb02</td>\n      <td id=\"T_c28e0_row38_col1\" class=\"data row38 col1\" >sz2492</td>\n      <td id=\"T_c28e0_row38_col2\" class=\"data row38 col2\" >3.1</td>\n      <td id=\"T_c28e0_row38_col3\" class=\"data row38 col3\" >5.0</td>\n      <td id=\"T_c28e0_row38_col4\" class=\"data row38 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row39_col0\" class=\"data row39 col0\" >gb02</td>\n      <td id=\"T_c28e0_row39_col1\" class=\"data row39 col1\" >wl0799</td>\n      <td id=\"T_c28e0_row39_col2\" class=\"data row39 col2\" >14.2</td>\n      <td id=\"T_c28e0_row39_col3\" class=\"data row39 col3\" >5.0</td>\n      <td id=\"T_c28e0_row39_col4\" class=\"data row39 col4\" >Usage exceeds allocation by 9.2</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row40_col0\" class=\"data row40 col0\" >gb02</td>\n      <td id=\"T_c28e0_row40_col1\" class=\"data row40 col1\" >yl8842</td>\n      <td id=\"T_c28e0_row40_col2\" class=\"data row40 col2\" >0.1</td>\n      <td id=\"T_c28e0_row40_col3\" class=\"data row40 col3\" >5.0</td>\n      <td id=\"T_c28e0_row40_col4\" class=\"data row40 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row41_col0\" class=\"data row41 col0\" >fy29</td>\n      <td id=\"T_c28e0_row41_col1\" class=\"data row41 col1\" >bw6466</td>\n      <td id=\"T_c28e0_row41_col2\" class=\"data row41 col2\" >449.4</td>\n      <td id=\"T_c28e0_row41_col3\" class=\"data row41 col3\" >320.0</td>\n      <td id=\"T_c28e0_row41_col4\" class=\"data row41 col4\" >Usage exceeds allocation by 129.4</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row42_col0\" class=\"data row42 col0\" >fy29</td>\n      <td id=\"T_c28e0_row42_col1\" class=\"data row42 col1\" >cr7888</td>\n      <td id=\"T_c28e0_row42_col2\" class=\"data row42 col2\" >23.4</td>\n      <td id=\"T_c28e0_row42_col3\" class=\"data row42 col3\" >50.0</td>\n      <td id=\"T_c28e0_row42_col4\" class=\"data row42 col4\" >Within the 50.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row43_col0\" class=\"data row43 col0\" >fy29</td>\n      <td id=\"T_c28e0_row43_col1\" class=\"data row43 col1\" >jt0319</td>\n      <td id=\"T_c28e0_row43_col2\" class=\"data row43 col2\" >0.7</td>\n      <td id=\"T_c28e0_row43_col3\" class=\"data row43 col3\" >5.0</td>\n      <td id=\"T_c28e0_row43_col4\" class=\"data row43 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row44_col0\" class=\"data row44 col0\" >fy29</td>\n      <td id=\"T_c28e0_row44_col1\" class=\"data row44 col1\" >mjl561</td>\n      <td id=\"T_c28e0_row44_col2\" class=\"data row44 col2\" >521.4</td>\n      <td id=\"T_c28e0_row44_col3\" class=\"data row44 col3\" >500.0</td>\n      <td id=\"T_c28e0_row44_col4\" class=\"data row44 col4\" >Usage exceeds allocation by 21.4</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row45_col0\" class=\"data row45 col0\" >fy29</td>\n      <td id=\"T_c28e0_row45_col1\" class=\"data row45 col1\" >mr4682</td>\n      <td id=\"T_c28e0_row45_col2\" class=\"data row45 col2\" >33.2</td>\n      <td id=\"T_c28e0_row45_col3\" class=\"data row45 col3\" >5.0</td>\n      <td id=\"T_c28e0_row45_col4\" class=\"data row45 col4\" >Usage exceeds allocation by 28.2</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row46_col0\" class=\"data row46 col0\" >fy29</td>\n      <td id=\"T_c28e0_row46_col1\" class=\"data row46 col1\" >mxr581</td>\n      <td id=\"T_c28e0_row46_col2\" class=\"data row46 col2\" >7.1</td>\n      <td id=\"T_c28e0_row46_col3\" class=\"data row46 col3\" >5.0</td>\n      <td id=\"T_c28e0_row46_col4\" class=\"data row46 col4\" >Usage exceeds allocation by 2.1</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row47_col0\" class=\"data row47 col0\" >fy29</td>\n      <td id=\"T_c28e0_row47_col1\" class=\"data row47 col1\" >nc3020</td>\n      <td id=\"T_c28e0_row47_col2\" class=\"data row47 col2\" >50.7</td>\n      <td id=\"T_c28e0_row47_col3\" class=\"data row47 col3\" >5.0</td>\n      <td id=\"T_c28e0_row47_col4\" class=\"data row47 col4\" >Usage exceeds allocation by 45.7</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row48_col0\" class=\"data row48 col0\" >fy29</td>\n      <td id=\"T_c28e0_row48_col1\" class=\"data row48 col1\" >pag548</td>\n      <td id=\"T_c28e0_row48_col2\" class=\"data row48 col2\" >0.8</td>\n      <td id=\"T_c28e0_row48_col3\" class=\"data row48 col3\" >50.0</td>\n      <td id=\"T_c28e0_row48_col4\" class=\"data row48 col4\" >Within the 50.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row49_col0\" class=\"data row49 col0\" >fy29</td>\n      <td id=\"T_c28e0_row49_col1\" class=\"data row49 col1\" >pc2687</td>\n      <td id=\"T_c28e0_row49_col2\" class=\"data row49 col2\" >17.6</td>\n      <td id=\"T_c28e0_row49_col3\" class=\"data row49 col3\" >50.0</td>\n      <td id=\"T_c28e0_row49_col4\" class=\"data row49 col4\" >Within the 50.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row50_col0\" class=\"data row50 col0\" >fy29</td>\n      <td id=\"T_c28e0_row50_col1\" class=\"data row50 col1\" >qo9901</td>\n      <td id=\"T_c28e0_row50_col2\" class=\"data row50 col2\" >45.9</td>\n      <td id=\"T_c28e0_row50_col3\" class=\"data row50 col3\" >50.0</td>\n      <td id=\"T_c28e0_row50_col4\" class=\"data row50 col4\" >Within the 50.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row51_col0\" class=\"data row51 col0\" >fy29</td>\n      <td id=\"T_c28e0_row51_col1\" class=\"data row51 col1\" >sg7549</td>\n      <td id=\"T_c28e0_row51_col2\" class=\"data row51 col2\" >1.3</td>\n      <td id=\"T_c28e0_row51_col3\" class=\"data row51 col3\" >5.0</td>\n      <td id=\"T_c28e0_row51_col4\" class=\"data row51 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row52_col0\" class=\"data row52 col0\" >fy29</td>\n      <td id=\"T_c28e0_row52_col1\" class=\"data row52 col1\" >sho561</td>\n      <td id=\"T_c28e0_row52_col2\" class=\"data row52 col2\" >1.5</td>\n      <td id=\"T_c28e0_row52_col3\" class=\"data row52 col3\" >5.0</td>\n      <td id=\"T_c28e0_row52_col4\" class=\"data row52 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row53_col0\" class=\"data row53 col0\" >fy29</td>\n      <td id=\"T_c28e0_row53_col1\" class=\"data row53 col1\" >sl0240</td>\n      <td id=\"T_c28e0_row53_col2\" class=\"data row53 col2\" >1.5</td>\n      <td id=\"T_c28e0_row53_col3\" class=\"data row53 col3\" >5.0</td>\n      <td id=\"T_c28e0_row53_col4\" class=\"data row53 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row54_col0\" class=\"data row54 col0\" >fy29</td>\n      <td id=\"T_c28e0_row54_col1\" class=\"data row54 col1\" >tp9488</td>\n      <td id=\"T_c28e0_row54_col2\" class=\"data row54 col2\" >4.0</td>\n      <td id=\"T_c28e0_row54_col3\" class=\"data row54 col3\" >5.0</td>\n      <td id=\"T_c28e0_row54_col4\" class=\"data row54 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row55_col0\" class=\"data row55 col0\" >fy29</td>\n      <td id=\"T_c28e0_row55_col1\" class=\"data row55 col1\" >txs156</td>\n      <td id=\"T_c28e0_row55_col2\" class=\"data row55 col2\" >17.1</td>\n      <td id=\"T_c28e0_row55_col3\" class=\"data row55 col3\" >5.0</td>\n      <td id=\"T_c28e0_row55_col4\" class=\"data row55 col4\" >Usage exceeds allocation by 12.1</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row56_col0\" class=\"data row56 col0\" >fy29</td>\n      <td id=\"T_c28e0_row56_col1\" class=\"data row56 col1\" >wl0799</td>\n      <td id=\"T_c28e0_row56_col2\" class=\"data row56 col2\" >1.0</td>\n      <td id=\"T_c28e0_row56_col3\" class=\"data row56 col3\" >5.0</td>\n      <td id=\"T_c28e0_row56_col4\" class=\"data row56 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row57_col0\" class=\"data row57 col0\" >if69</td>\n      <td id=\"T_c28e0_row57_col1\" class=\"data row57 col1\" >ak5887</td>\n      <td id=\"T_c28e0_row57_col2\" class=\"data row57 col2\" >4.4</td>\n      <td id=\"T_c28e0_row57_col3\" class=\"data row57 col3\" >5.0</td>\n      <td id=\"T_c28e0_row57_col4\" class=\"data row57 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row58_col0\" class=\"data row58 col0\" >if69</td>\n      <td id=\"T_c28e0_row58_col1\" class=\"data row58 col1\" >bx1902</td>\n      <td id=\"T_c28e0_row58_col2\" class=\"data row58 col2\" >21.6</td>\n      <td id=\"T_c28e0_row58_col3\" class=\"data row58 col3\" >5.0</td>\n      <td id=\"T_c28e0_row58_col4\" class=\"data row58 col4\" >Usage exceeds allocation by 16.6</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row59_col0\" class=\"data row59 col0\" >if69</td>\n      <td id=\"T_c28e0_row59_col1\" class=\"data row59 col1\" >cb4968</td>\n      <td id=\"T_c28e0_row59_col2\" class=\"data row59 col2\" >231.8</td>\n      <td id=\"T_c28e0_row59_col3\" class=\"data row59 col3\" >250.0</td>\n      <td id=\"T_c28e0_row59_col4\" class=\"data row59 col4\" >Within the 250.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row60_col0\" class=\"data row60 col0\" >if69</td>\n      <td id=\"T_c28e0_row60_col1\" class=\"data row60 col1\" >cj0591</td>\n      <td id=\"T_c28e0_row60_col2\" class=\"data row60 col2\" >15.6</td>\n      <td id=\"T_c28e0_row60_col3\" class=\"data row60 col3\" >5.0</td>\n      <td id=\"T_c28e0_row60_col4\" class=\"data row60 col4\" >Usage exceeds allocation by 10.6</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row61_col0\" class=\"data row61 col0\" >if69</td>\n      <td id=\"T_c28e0_row61_col1\" class=\"data row61 col1\" >cr7888</td>\n      <td id=\"T_c28e0_row61_col2\" class=\"data row61 col2\" >0.0</td>\n      <td id=\"T_c28e0_row61_col3\" class=\"data row61 col3\" >5.0</td>\n      <td id=\"T_c28e0_row61_col4\" class=\"data row61 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row62_col0\" class=\"data row62 col0\" >if69</td>\n      <td id=\"T_c28e0_row62_col1\" class=\"data row62 col1\" >cxa561</td>\n      <td id=\"T_c28e0_row62_col2\" class=\"data row62 col2\" >2.0</td>\n      <td id=\"T_c28e0_row62_col3\" class=\"data row62 col3\" >5.0</td>\n      <td id=\"T_c28e0_row62_col4\" class=\"data row62 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row63_col0\" class=\"data row63 col0\" >if69</td>\n      <td id=\"T_c28e0_row63_col1\" class=\"data row63 col1\" >ef7927</td>\n      <td id=\"T_c28e0_row63_col2\" class=\"data row63 col2\" >13.3</td>\n      <td id=\"T_c28e0_row63_col3\" class=\"data row63 col3\" >5.0</td>\n      <td id=\"T_c28e0_row63_col4\" class=\"data row63 col4\" >Usage exceeds allocation by 8.3</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row64_col0\" class=\"data row64 col0\" >if69</td>\n      <td id=\"T_c28e0_row64_col1\" class=\"data row64 col1\" >ft3359</td>\n      <td id=\"T_c28e0_row64_col2\" class=\"data row64 col2\" >0.2</td>\n      <td id=\"T_c28e0_row64_col3\" class=\"data row64 col3\" >5.0</td>\n      <td id=\"T_c28e0_row64_col4\" class=\"data row64 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row65_col0\" class=\"data row65 col0\" >if69</td>\n      <td id=\"T_c28e0_row65_col1\" class=\"data row65 col1\" >gs5098</td>\n      <td id=\"T_c28e0_row65_col2\" class=\"data row65 col2\" >256.2</td>\n      <td id=\"T_c28e0_row65_col3\" class=\"data row65 col3\" >250.0</td>\n      <td id=\"T_c28e0_row65_col4\" class=\"data row65 col4\" >Usage exceeds allocation by 6.2</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row66_col0\" class=\"data row66 col0\" >if69</td>\n      <td id=\"T_c28e0_row66_col1\" class=\"data row66 col1\" >jn3312</td>\n      <td id=\"T_c28e0_row66_col2\" class=\"data row66 col2\" >0.0</td>\n      <td id=\"T_c28e0_row66_col3\" class=\"data row66 col3\" >5.0</td>\n      <td id=\"T_c28e0_row66_col4\" class=\"data row66 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row67_col0\" class=\"data row67 col0\" >if69</td>\n      <td id=\"T_c28e0_row67_col1\" class=\"data row67 col1\" >kt3973</td>\n      <td id=\"T_c28e0_row67_col2\" class=\"data row67 col2\" >278.7</td>\n      <td id=\"T_c28e0_row67_col3\" class=\"data row67 col3\" >300.0</td>\n      <td id=\"T_c28e0_row67_col4\" class=\"data row67 col4\" >Within the 300.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row68_col0\" class=\"data row68 col0\" >if69</td>\n      <td id=\"T_c28e0_row68_col1\" class=\"data row68 col1\" >lr0632</td>\n      <td id=\"T_c28e0_row68_col2\" class=\"data row68 col2\" >0.4</td>\n      <td id=\"T_c28e0_row68_col3\" class=\"data row68 col3\" >5.0</td>\n      <td id=\"T_c28e0_row68_col4\" class=\"data row68 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row69_col0\" class=\"data row69 col0\" >if69</td>\n      <td id=\"T_c28e0_row69_col1\" class=\"data row69 col1\" >ls3248</td>\n      <td id=\"T_c28e0_row69_col2\" class=\"data row69 col2\" >0.3</td>\n      <td id=\"T_c28e0_row69_col3\" class=\"data row69 col3\" >5.0</td>\n      <td id=\"T_c28e0_row69_col4\" class=\"data row69 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row70_col0\" class=\"data row70 col0\" >if69</td>\n      <td id=\"T_c28e0_row70_col1\" class=\"data row70 col1\" >mb0427</td>\n      <td id=\"T_c28e0_row70_col2\" class=\"data row70 col2\" >8.7</td>\n      <td id=\"T_c28e0_row70_col3\" class=\"data row70 col3\" >5.0</td>\n      <td id=\"T_c28e0_row70_col4\" class=\"data row70 col4\" >Usage exceeds allocation by 3.7</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row71_col0\" class=\"data row71 col0\" >if69</td>\n      <td id=\"T_c28e0_row71_col1\" class=\"data row71 col1\" >mf3225</td>\n      <td id=\"T_c28e0_row71_col2\" class=\"data row71 col2\" >0.0</td>\n      <td id=\"T_c28e0_row71_col3\" class=\"data row71 col3\" >5.0</td>\n      <td id=\"T_c28e0_row71_col4\" class=\"data row71 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row72_col0\" class=\"data row72 col0\" >if69</td>\n      <td id=\"T_c28e0_row72_col1\" class=\"data row72 col1\" >mm6452</td>\n      <td id=\"T_c28e0_row72_col2\" class=\"data row72 col2\" >3.4</td>\n      <td id=\"T_c28e0_row72_col3\" class=\"data row72 col3\" >5.0</td>\n      <td id=\"T_c28e0_row72_col4\" class=\"data row72 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row73_col0\" class=\"data row73 col0\" >if69</td>\n      <td id=\"T_c28e0_row73_col1\" class=\"data row73 col1\" >mm7092</td>\n      <td id=\"T_c28e0_row73_col2\" class=\"data row73 col2\" >0.2</td>\n      <td id=\"T_c28e0_row73_col3\" class=\"data row73 col3\" >5.0</td>\n      <td id=\"T_c28e0_row73_col4\" class=\"data row73 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row74_col0\" class=\"data row74 col0\" >if69</td>\n      <td id=\"T_c28e0_row74_col1\" class=\"data row74 col1\" >mr4682</td>\n      <td id=\"T_c28e0_row74_col2\" class=\"data row74 col2\" >60.3</td>\n      <td id=\"T_c28e0_row74_col3\" class=\"data row74 col3\" >60.0</td>\n      <td id=\"T_c28e0_row74_col4\" class=\"data row74 col4\" >Usage exceeds allocation by 0.3</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row75_col0\" class=\"data row75 col0\" >if69</td>\n      <td id=\"T_c28e0_row75_col1\" class=\"data row75 col1\" >nxg561</td>\n      <td id=\"T_c28e0_row75_col2\" class=\"data row75 col2\" >69.6</td>\n      <td id=\"T_c28e0_row75_col3\" class=\"data row75 col3\" >5.0</td>\n      <td id=\"T_c28e0_row75_col4\" class=\"data row75 col4\" >Usage exceeds allocation by 64.6</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row76_col0\" class=\"data row76 col0\" >if69</td>\n      <td id=\"T_c28e0_row76_col1\" class=\"data row76 col1\" >qj2249</td>\n      <td id=\"T_c28e0_row76_col2\" class=\"data row76 col2\" >25.1</td>\n      <td id=\"T_c28e0_row76_col3\" class=\"data row76 col3\" >5.0</td>\n      <td id=\"T_c28e0_row76_col4\" class=\"data row76 col4\" >Usage exceeds allocation by 20.1</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row77_col0\" class=\"data row77 col0\" >if69</td>\n      <td id=\"T_c28e0_row77_col1\" class=\"data row77 col1\" >qo9901</td>\n      <td id=\"T_c28e0_row77_col2\" class=\"data row77 col2\" >39.6</td>\n      <td id=\"T_c28e0_row77_col3\" class=\"data row77 col3\" >15.0</td>\n      <td id=\"T_c28e0_row77_col4\" class=\"data row77 col4\" >Usage exceeds allocation by 24.6</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row78_col0\" class=\"data row78 col0\" >if69</td>\n      <td id=\"T_c28e0_row78_col1\" class=\"data row78 col1\" >rk9077</td>\n      <td id=\"T_c28e0_row78_col2\" class=\"data row78 col2\" >15.0</td>\n      <td id=\"T_c28e0_row78_col3\" class=\"data row78 col3\" >5.0</td>\n      <td id=\"T_c28e0_row78_col4\" class=\"data row78 col4\" >Usage exceeds allocation by 10.0</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row79_col0\" class=\"data row79 col0\" >if69</td>\n      <td id=\"T_c28e0_row79_col1\" class=\"data row79 col1\" >rq1991</td>\n      <td id=\"T_c28e0_row79_col2\" class=\"data row79 col2\" >22.6</td>\n      <td id=\"T_c28e0_row79_col3\" class=\"data row79 col3\" >5.0</td>\n      <td id=\"T_c28e0_row79_col4\" class=\"data row79 col4\" >Usage exceeds allocation by 17.6</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row80_col0\" class=\"data row80 col0\" >if69</td>\n      <td id=\"T_c28e0_row80_col1\" class=\"data row80 col1\" >sc1326</td>\n      <td id=\"T_c28e0_row80_col2\" class=\"data row80 col2\" >13.1</td>\n      <td id=\"T_c28e0_row80_col3\" class=\"data row80 col3\" >5.0</td>\n      <td id=\"T_c28e0_row80_col4\" class=\"data row80 col4\" >Usage exceeds allocation by 8.1</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row81_col0\" class=\"data row81 col0\" >if69</td>\n      <td id=\"T_c28e0_row81_col1\" class=\"data row81 col1\" >td6427</td>\n      <td id=\"T_c28e0_row81_col2\" class=\"data row81 col2\" >66.2</td>\n      <td id=\"T_c28e0_row81_col3\" class=\"data row81 col3\" >50.0</td>\n      <td id=\"T_c28e0_row81_col4\" class=\"data row81 col4\" >Usage exceeds allocation by 16.2</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row82_col0\" class=\"data row82 col0\" >if69</td>\n      <td id=\"T_c28e0_row82_col1\" class=\"data row82 col1\" >tp4064</td>\n      <td id=\"T_c28e0_row82_col2\" class=\"data row82 col2\" >5.7</td>\n      <td id=\"T_c28e0_row82_col3\" class=\"data row82 col3\" >5.0</td>\n      <td id=\"T_c28e0_row82_col4\" class=\"data row82 col4\" >Usage exceeds allocation by 0.7</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row83_col0\" class=\"data row83 col0\" >if69</td>\n      <td id=\"T_c28e0_row83_col1\" class=\"data row83 col1\" >ym7079</td>\n      <td id=\"T_c28e0_row83_col2\" class=\"data row83 col2\" >95.9</td>\n      <td id=\"T_c28e0_row83_col3\" class=\"data row83 col3\" >100.0</td>\n      <td id=\"T_c28e0_row83_col4\" class=\"data row83 col4\" >Within the 100.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row84_col0\" class=\"data row84 col0\" >ng72</td>\n      <td id=\"T_c28e0_row84_col1\" class=\"data row84 col1\" >ab4502</td>\n      <td id=\"T_c28e0_row84_col2\" class=\"data row84 col2\" >61.8</td>\n      <td id=\"T_c28e0_row84_col3\" class=\"data row84 col3\" >5.0</td>\n      <td id=\"T_c28e0_row84_col4\" class=\"data row84 col4\" >Usage exceeds allocation by 56.8</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row85_col0\" class=\"data row85 col0\" >ng72</td>\n      <td id=\"T_c28e0_row85_col1\" class=\"data row85 col1\" >ad0579</td>\n      <td id=\"T_c28e0_row85_col2\" class=\"data row85 col2\" >0.1</td>\n      <td id=\"T_c28e0_row85_col3\" class=\"data row85 col3\" >5.0</td>\n      <td id=\"T_c28e0_row85_col4\" class=\"data row85 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row86_col0\" class=\"data row86 col0\" >ng72</td>\n      <td id=\"T_c28e0_row86_col1\" class=\"data row86 col1\" >ag3979</td>\n      <td id=\"T_c28e0_row86_col2\" class=\"data row86 col2\" >1.2</td>\n      <td id=\"T_c28e0_row86_col3\" class=\"data row86 col3\" >5.0</td>\n      <td id=\"T_c28e0_row86_col4\" class=\"data row86 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row87_col0\" class=\"data row87 col0\" >ng72</td>\n      <td id=\"T_c28e0_row87_col1\" class=\"data row87 col1\" >ajg565</td>\n      <td id=\"T_c28e0_row87_col2\" class=\"data row87 col2\" >0.0</td>\n      <td id=\"T_c28e0_row87_col3\" class=\"data row87 col3\" >5.0</td>\n      <td id=\"T_c28e0_row87_col4\" class=\"data row87 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row88_col0\" class=\"data row88 col0\" >ng72</td>\n      <td id=\"T_c28e0_row88_col1\" class=\"data row88 col1\" >as9583</td>\n      <td id=\"T_c28e0_row88_col2\" class=\"data row88 col2\" >116.8</td>\n      <td id=\"T_c28e0_row88_col3\" class=\"data row88 col3\" >200.0</td>\n      <td id=\"T_c28e0_row88_col4\" class=\"data row88 col4\" >Within the 200.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row89_col0\" class=\"data row89 col0\" >ng72</td>\n      <td id=\"T_c28e0_row89_col1\" class=\"data row89 col1\" >cd3007</td>\n      <td id=\"T_c28e0_row89_col2\" class=\"data row89 col2\" >38.6</td>\n      <td id=\"T_c28e0_row89_col3\" class=\"data row89 col3\" >25.0</td>\n      <td id=\"T_c28e0_row89_col4\" class=\"data row89 col4\" >Usage exceeds allocation by 13.6</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row90_col0\" class=\"data row90 col0\" >ng72</td>\n      <td id=\"T_c28e0_row90_col1\" class=\"data row90 col1\" >cp9270</td>\n      <td id=\"T_c28e0_row90_col2\" class=\"data row90 col2\" >0.9</td>\n      <td id=\"T_c28e0_row90_col3\" class=\"data row90 col3\" >5.0</td>\n      <td id=\"T_c28e0_row90_col4\" class=\"data row90 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row91_col0\" class=\"data row91 col0\" >ng72</td>\n      <td id=\"T_c28e0_row91_col1\" class=\"data row91 col1\" >cxh603</td>\n      <td id=\"T_c28e0_row91_col2\" class=\"data row91 col2\" >43.9</td>\n      <td id=\"T_c28e0_row91_col3\" class=\"data row91 col3\" >5.0</td>\n      <td id=\"T_c28e0_row91_col4\" class=\"data row91 col4\" >Usage exceeds allocation by 38.9</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row92_col0\" class=\"data row92 col0\" >ng72</td>\n      <td id=\"T_c28e0_row92_col1\" class=\"data row92 col1\" >dr6273</td>\n      <td id=\"T_c28e0_row92_col2\" class=\"data row92 col2\" >0.2</td>\n      <td id=\"T_c28e0_row92_col3\" class=\"data row92 col3\" >5.0</td>\n      <td id=\"T_c28e0_row92_col4\" class=\"data row92 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row93_col0\" class=\"data row93 col0\" >ng72</td>\n      <td id=\"T_c28e0_row93_col1\" class=\"data row93 col1\" >gs5098</td>\n      <td id=\"T_c28e0_row93_col2\" class=\"data row93 col2\" >226.7</td>\n      <td id=\"T_c28e0_row93_col3\" class=\"data row93 col3\" >350.0</td>\n      <td id=\"T_c28e0_row93_col4\" class=\"data row93 col4\" >Within the 350.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row94_col0\" class=\"data row94 col0\" >ng72</td>\n      <td id=\"T_c28e0_row94_col1\" class=\"data row94 col1\" >hc0407</td>\n      <td id=\"T_c28e0_row94_col2\" class=\"data row94 col2\" >4.1</td>\n      <td id=\"T_c28e0_row94_col3\" class=\"data row94 col3\" >5.0</td>\n      <td id=\"T_c28e0_row94_col4\" class=\"data row94 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row95_col0\" class=\"data row95 col0\" >ng72</td>\n      <td id=\"T_c28e0_row95_col1\" class=\"data row95 col1\" >jd2435</td>\n      <td id=\"T_c28e0_row95_col2\" class=\"data row95 col2\" >0.0</td>\n      <td id=\"T_c28e0_row95_col3\" class=\"data row95 col3\" >5.0</td>\n      <td id=\"T_c28e0_row95_col4\" class=\"data row95 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row96_col0\" class=\"data row96 col0\" >ng72</td>\n      <td id=\"T_c28e0_row96_col1\" class=\"data row96 col1\" >jpe561</td>\n      <td id=\"T_c28e0_row96_col2\" class=\"data row96 col2\" >12.8</td>\n      <td id=\"T_c28e0_row96_col3\" class=\"data row96 col3\" >5.0</td>\n      <td id=\"T_c28e0_row96_col4\" class=\"data row96 col4\" >Usage exceeds allocation by 7.8</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row97_col0\" class=\"data row97 col0\" >ng72</td>\n      <td id=\"T_c28e0_row97_col1\" class=\"data row97 col1\" >js2535</td>\n      <td id=\"T_c28e0_row97_col2\" class=\"data row97 col2\" >3.3</td>\n      <td id=\"T_c28e0_row97_col3\" class=\"data row97 col3\" >5.0</td>\n      <td id=\"T_c28e0_row97_col4\" class=\"data row97 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row98_col0\" class=\"data row98 col0\" >ng72</td>\n      <td id=\"T_c28e0_row98_col1\" class=\"data row98 col1\" >js5018</td>\n      <td id=\"T_c28e0_row98_col2\" class=\"data row98 col2\" >2.2</td>\n      <td id=\"T_c28e0_row98_col3\" class=\"data row98 col3\" >5.0</td>\n      <td id=\"T_c28e0_row98_col4\" class=\"data row98 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row99_col0\" class=\"data row99 col0\" >ng72</td>\n      <td id=\"T_c28e0_row99_col1\" class=\"data row99 col1\" >kr2086</td>\n      <td id=\"T_c28e0_row99_col2\" class=\"data row99 col2\" >1.5</td>\n      <td id=\"T_c28e0_row99_col3\" class=\"data row99 col3\" >5.0</td>\n      <td id=\"T_c28e0_row99_col4\" class=\"data row99 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row100_col0\" class=\"data row100 col0\" >ng72</td>\n      <td id=\"T_c28e0_row100_col1\" class=\"data row100 col1\" >lk5320</td>\n      <td id=\"T_c28e0_row100_col2\" class=\"data row100 col2\" >3.9</td>\n      <td id=\"T_c28e0_row100_col3\" class=\"data row100 col3\" >5.0</td>\n      <td id=\"T_c28e0_row100_col4\" class=\"data row100 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row101_col0\" class=\"data row101 col0\" >ng72</td>\n      <td id=\"T_c28e0_row101_col1\" class=\"data row101 col1\" >mf9479</td>\n      <td id=\"T_c28e0_row101_col2\" class=\"data row101 col2\" >1.0</td>\n      <td id=\"T_c28e0_row101_col3\" class=\"data row101 col3\" >5.0</td>\n      <td id=\"T_c28e0_row101_col4\" class=\"data row101 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row102_col0\" class=\"data row102 col0\" >ng72</td>\n      <td id=\"T_c28e0_row102_col1\" class=\"data row102 col1\" >mr4682</td>\n      <td id=\"T_c28e0_row102_col2\" class=\"data row102 col2\" >20.7</td>\n      <td id=\"T_c28e0_row102_col3\" class=\"data row102 col3\" >5.0</td>\n      <td id=\"T_c28e0_row102_col4\" class=\"data row102 col4\" >Usage exceeds allocation by 15.7</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row103_col0\" class=\"data row103 col0\" >ng72</td>\n      <td id=\"T_c28e0_row103_col1\" class=\"data row103 col1\" >ms5578</td>\n      <td id=\"T_c28e0_row103_col2\" class=\"data row103 col2\" >0.1</td>\n      <td id=\"T_c28e0_row103_col3\" class=\"data row103 col3\" >5.0</td>\n      <td id=\"T_c28e0_row103_col4\" class=\"data row103 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row104_col0\" class=\"data row104 col0\" >ng72</td>\n      <td id=\"T_c28e0_row104_col1\" class=\"data row104 col1\" >nt4273</td>\n      <td id=\"T_c28e0_row104_col2\" class=\"data row104 col2\" >0.4</td>\n      <td id=\"T_c28e0_row104_col3\" class=\"data row104 col3\" >5.0</td>\n      <td id=\"T_c28e0_row104_col4\" class=\"data row104 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row105_col0\" class=\"data row105 col0\" >ng72</td>\n      <td id=\"T_c28e0_row105_col1\" class=\"data row105 col1\" >oa1927</td>\n      <td id=\"T_c28e0_row105_col2\" class=\"data row105 col2\" >21.3</td>\n      <td id=\"T_c28e0_row105_col3\" class=\"data row105 col3\" >5.0</td>\n      <td id=\"T_c28e0_row105_col4\" class=\"data row105 col4\" >Usage exceeds allocation by 16.3</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row106_col0\" class=\"data row106 col0\" >ng72</td>\n      <td id=\"T_c28e0_row106_col1\" class=\"data row106 col1\" >pv3484</td>\n      <td id=\"T_c28e0_row106_col2\" class=\"data row106 col2\" >0.0</td>\n      <td id=\"T_c28e0_row106_col3\" class=\"data row106 col3\" >5.0</td>\n      <td id=\"T_c28e0_row106_col4\" class=\"data row106 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row107_col0\" class=\"data row107 col0\" >ng72</td>\n      <td id=\"T_c28e0_row107_col1\" class=\"data row107 col1\" >qg8515</td>\n      <td id=\"T_c28e0_row107_col2\" class=\"data row107 col2\" >9.8</td>\n      <td id=\"T_c28e0_row107_col3\" class=\"data row107 col3\" >5.0</td>\n      <td id=\"T_c28e0_row107_col4\" class=\"data row107 col4\" >Usage exceeds allocation by 4.8</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row108_col0\" class=\"data row108 col0\" >ng72</td>\n      <td id=\"T_c28e0_row108_col1\" class=\"data row108 col1\" >ri9247</td>\n      <td id=\"T_c28e0_row108_col2\" class=\"data row108 col2\" >4.1</td>\n      <td id=\"T_c28e0_row108_col3\" class=\"data row108 col3\" >5.0</td>\n      <td id=\"T_c28e0_row108_col4\" class=\"data row108 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row109_col0\" class=\"data row109 col0\" >ng72</td>\n      <td id=\"T_c28e0_row109_col1\" class=\"data row109 col1\" >sk6139</td>\n      <td id=\"T_c28e0_row109_col2\" class=\"data row109 col2\" >0.3</td>\n      <td id=\"T_c28e0_row109_col3\" class=\"data row109 col3\" >5.0</td>\n      <td id=\"T_c28e0_row109_col4\" class=\"data row109 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row110_col0\" class=\"data row110 col0\" >ng72</td>\n      <td id=\"T_c28e0_row110_col1\" class=\"data row110 col1\" >sz2492</td>\n      <td id=\"T_c28e0_row110_col2\" class=\"data row110 col2\" >7.4</td>\n      <td id=\"T_c28e0_row110_col3\" class=\"data row110 col3\" >5.0</td>\n      <td id=\"T_c28e0_row110_col4\" class=\"data row110 col4\" >Usage exceeds allocation by 2.4</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row111_col0\" class=\"data row111 col0\" >ng72</td>\n      <td id=\"T_c28e0_row111_col1\" class=\"data row111 col1\" >wz4975</td>\n      <td id=\"T_c28e0_row111_col2\" class=\"data row111 col2\" >0.1</td>\n      <td id=\"T_c28e0_row111_col3\" class=\"data row111 col3\" >5.0</td>\n      <td id=\"T_c28e0_row111_col4\" class=\"data row111 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row112_col0\" class=\"data row112 col0\" >ng72</td>\n      <td id=\"T_c28e0_row112_col1\" class=\"data row112 col1\" >xw6141</td>\n      <td id=\"T_c28e0_row112_col2\" class=\"data row112 col2\" >80.2</td>\n      <td id=\"T_c28e0_row112_col3\" class=\"data row112 col3\" >5.0</td>\n      <td id=\"T_c28e0_row112_col4\" class=\"data row112 col4\" >Usage exceeds allocation by 75.2</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row113_col0\" class=\"data row113 col0\" >ng72</td>\n      <td id=\"T_c28e0_row113_col1\" class=\"data row113 col1\" >ym7079</td>\n      <td id=\"T_c28e0_row113_col2\" class=\"data row113 col2\" >563.3</td>\n      <td id=\"T_c28e0_row113_col3\" class=\"data row113 col3\" >550.0</td>\n      <td id=\"T_c28e0_row113_col4\" class=\"data row113 col4\" >Usage exceeds allocation by 13.3</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row114_col0\" class=\"data row114 col0\" >ng72</td>\n      <td id=\"T_c28e0_row114_col1\" class=\"data row114 col1\" >yz1881</td>\n      <td id=\"T_c28e0_row114_col2\" class=\"data row114 col2\" >0.0</td>\n      <td id=\"T_c28e0_row114_col3\" class=\"data row114 col3\" >5.0</td>\n      <td id=\"T_c28e0_row114_col4\" class=\"data row114 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_c28e0_row115_col0\" class=\"data row115 col0\" >ng72</td>\n      <td id=\"T_c28e0_row115_col1\" class=\"data row115 col1\" >zz6006</td>\n      <td id=\"T_c28e0_row115_col2\" class=\"data row115 col2\" >3.7</td>\n      <td id=\"T_c28e0_row115_col3\" class=\"data row115 col3\" >5.0</td>\n      <td id=\"T_c28e0_row115_col4\" class=\"data row115 col4\" >Within the 5.0 KSU allocation per quarter</td>\n    </tr>\n  </tbody>\n</table>\n"};
+        let dt_args = {"columnControl": [{"target": 0, "content": ["order"]}, {"target": 1, "content": ["search"]}], "ordering": {"indicators": false, "handler": false}, "scrollY": "600px", "paging": false, "columnDefs": [{"width": "40%", "targets": [4]}], "style": {"width": "100%", "margin": "auto"}, "layout": {"topStart": "buttons", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "responsive": true, "autoWidth": false, "info": true, "dom": "fiBrtlp", "order": [], "searching": true, "language": {"info": "Showing _TOTAL_ entries"}, "classes": ["display", "nowrap", "compact"], "buttons": [], "lengthChange": false, "text_in_header_can_be_selected": true, "keys": true, "table_style": "\n#T_bd0e5_row34_col0, #T_bd0e5_row34_col1, #T_bd0e5_row34_col2, #T_bd0e5_row34_col3, #T_bd0e5_row34_col4 {\n  color: #B7533D;\n}\n", "table_html": "\n<table id=\"T_bd0e5\">\n  <thead>\n    <tr>\n      <th id=\"T_bd0e5_level0_col0\" class=\"col_heading level0 col0\" >Project</th>\n      <th id=\"T_bd0e5_level0_col1\" class=\"col_heading level0 col1\" >User</th>\n      <th id=\"T_bd0e5_level0_col2\" class=\"col_heading level0 col2\" >Usage</th>\n      <th id=\"T_bd0e5_level0_col3\" class=\"col_heading level0 col3\" >Allocation</th>\n      <th id=\"T_bd0e5_level0_col4\" class=\"col_heading level0 col4\" >Status</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td id=\"T_bd0e5_row0_col0\" class=\"data row0 col0\" >gb02</td>\n      <td id=\"T_bd0e5_row0_col1\" class=\"data row0 col1\" >ad0579</td>\n      <td id=\"T_bd0e5_row0_col2\" class=\"data row0 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row0_col3\" class=\"data row0 col3\" >10</td>\n      <td id=\"T_bd0e5_row0_col4\" class=\"data row0 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row1_col0\" class=\"data row1 col0\" >gb02</td>\n      <td id=\"T_bd0e5_row1_col1\" class=\"data row1 col1\" >ad1803</td>\n      <td id=\"T_bd0e5_row1_col2\" class=\"data row1 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row1_col3\" class=\"data row1 col3\" >10</td>\n      <td id=\"T_bd0e5_row1_col4\" class=\"data row1 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row2_col0\" class=\"data row2 col0\" >gb02</td>\n      <td id=\"T_bd0e5_row2_col1\" class=\"data row2 col1\" >ak2642</td>\n      <td id=\"T_bd0e5_row2_col2\" class=\"data row2 col2\" >0.2</td>\n      <td id=\"T_bd0e5_row2_col3\" class=\"data row2 col3\" >10</td>\n      <td id=\"T_bd0e5_row2_col4\" class=\"data row2 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row3_col0\" class=\"data row3 col0\" >gb02</td>\n      <td id=\"T_bd0e5_row3_col1\" class=\"data row3 col1\" >dh3280</td>\n      <td id=\"T_bd0e5_row3_col2\" class=\"data row3 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row3_col3\" class=\"data row3 col3\" >10</td>\n      <td id=\"T_bd0e5_row3_col4\" class=\"data row3 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row4_col0\" class=\"data row4 col0\" >gb02</td>\n      <td id=\"T_bd0e5_row4_col1\" class=\"data row4 col1\" >ef1645</td>\n      <td id=\"T_bd0e5_row4_col2\" class=\"data row4 col2\" >0.1</td>\n      <td id=\"T_bd0e5_row4_col3\" class=\"data row4 col3\" >10</td>\n      <td id=\"T_bd0e5_row4_col4\" class=\"data row4 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row5_col0\" class=\"data row5 col0\" >gb02</td>\n      <td id=\"T_bd0e5_row5_col1\" class=\"data row5 col1\" >lw5085</td>\n      <td id=\"T_bd0e5_row5_col2\" class=\"data row5 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row5_col3\" class=\"data row5 col3\" >10</td>\n      <td id=\"T_bd0e5_row5_col4\" class=\"data row5 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row6_col0\" class=\"data row6 col0\" >gb02</td>\n      <td id=\"T_bd0e5_row6_col1\" class=\"data row6 col1\" >ms5578</td>\n      <td id=\"T_bd0e5_row6_col2\" class=\"data row6 col2\" >0.1</td>\n      <td id=\"T_bd0e5_row6_col3\" class=\"data row6 col3\" >10</td>\n      <td id=\"T_bd0e5_row6_col4\" class=\"data row6 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row7_col0\" class=\"data row7 col0\" >gb02</td>\n      <td id=\"T_bd0e5_row7_col1\" class=\"data row7 col1\" >nt4273</td>\n      <td id=\"T_bd0e5_row7_col2\" class=\"data row7 col2\" >0.4</td>\n      <td id=\"T_bd0e5_row7_col3\" class=\"data row7 col3\" >10</td>\n      <td id=\"T_bd0e5_row7_col4\" class=\"data row7 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row8_col0\" class=\"data row8 col0\" >gb02</td>\n      <td id=\"T_bd0e5_row8_col1\" class=\"data row8 col1\" >pag548</td>\n      <td id=\"T_bd0e5_row8_col2\" class=\"data row8 col2\" >0.3</td>\n      <td id=\"T_bd0e5_row8_col3\" class=\"data row8 col3\" >10</td>\n      <td id=\"T_bd0e5_row8_col4\" class=\"data row8 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row9_col0\" class=\"data row9 col0\" >gb02</td>\n      <td id=\"T_bd0e5_row9_col1\" class=\"data row9 col1\" >pp7885</td>\n      <td id=\"T_bd0e5_row9_col2\" class=\"data row9 col2\" >0.6</td>\n      <td id=\"T_bd0e5_row9_col3\" class=\"data row9 col3\" >10</td>\n      <td id=\"T_bd0e5_row9_col4\" class=\"data row9 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row10_col0\" class=\"data row10 col0\" >gb02</td>\n      <td id=\"T_bd0e5_row10_col1\" class=\"data row10 col1\" >wl0799</td>\n      <td id=\"T_bd0e5_row10_col2\" class=\"data row10 col2\" >0.3</td>\n      <td id=\"T_bd0e5_row10_col3\" class=\"data row10 col3\" >10</td>\n      <td id=\"T_bd0e5_row10_col4\" class=\"data row10 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row11_col0\" class=\"data row11 col0\" >fy29</td>\n      <td id=\"T_bd0e5_row11_col1\" class=\"data row11 col1\" >bw6466</td>\n      <td id=\"T_bd0e5_row11_col2\" class=\"data row11 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row11_col3\" class=\"data row11 col3\" >10</td>\n      <td id=\"T_bd0e5_row11_col4\" class=\"data row11 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row12_col0\" class=\"data row12 col0\" >fy29</td>\n      <td id=\"T_bd0e5_row12_col1\" class=\"data row12 col1\" >jt0319</td>\n      <td id=\"T_bd0e5_row12_col2\" class=\"data row12 col2\" >0.3</td>\n      <td id=\"T_bd0e5_row12_col3\" class=\"data row12 col3\" >10</td>\n      <td id=\"T_bd0e5_row12_col4\" class=\"data row12 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row13_col0\" class=\"data row13 col0\" >fy29</td>\n      <td id=\"T_bd0e5_row13_col1\" class=\"data row13 col1\" >mjl561</td>\n      <td id=\"T_bd0e5_row13_col2\" class=\"data row13 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row13_col3\" class=\"data row13 col3\" >10</td>\n      <td id=\"T_bd0e5_row13_col4\" class=\"data row13 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row14_col0\" class=\"data row14 col0\" >fy29</td>\n      <td id=\"T_bd0e5_row14_col1\" class=\"data row14 col1\" >qo9901</td>\n      <td id=\"T_bd0e5_row14_col2\" class=\"data row14 col2\" >0.2</td>\n      <td id=\"T_bd0e5_row14_col3\" class=\"data row14 col3\" >10</td>\n      <td id=\"T_bd0e5_row14_col4\" class=\"data row14 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row15_col0\" class=\"data row15 col0\" >fy29</td>\n      <td id=\"T_bd0e5_row15_col1\" class=\"data row15 col1\" >wl0799</td>\n      <td id=\"T_bd0e5_row15_col2\" class=\"data row15 col2\" >0.3</td>\n      <td id=\"T_bd0e5_row15_col3\" class=\"data row15 col3\" >10</td>\n      <td id=\"T_bd0e5_row15_col4\" class=\"data row15 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row16_col0\" class=\"data row16 col0\" >if69</td>\n      <td id=\"T_bd0e5_row16_col1\" class=\"data row16 col1\" >ak5887</td>\n      <td id=\"T_bd0e5_row16_col2\" class=\"data row16 col2\" >0.2</td>\n      <td id=\"T_bd0e5_row16_col3\" class=\"data row16 col3\" >10</td>\n      <td id=\"T_bd0e5_row16_col4\" class=\"data row16 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row17_col0\" class=\"data row17 col0\" >if69</td>\n      <td id=\"T_bd0e5_row17_col1\" class=\"data row17 col1\" >cb4968</td>\n      <td id=\"T_bd0e5_row17_col2\" class=\"data row17 col2\" >0.7</td>\n      <td id=\"T_bd0e5_row17_col3\" class=\"data row17 col3\" >10</td>\n      <td id=\"T_bd0e5_row17_col4\" class=\"data row17 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row18_col0\" class=\"data row18 col0\" >if69</td>\n      <td id=\"T_bd0e5_row18_col1\" class=\"data row18 col1\" >mb0427</td>\n      <td id=\"T_bd0e5_row18_col2\" class=\"data row18 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row18_col3\" class=\"data row18 col3\" >10</td>\n      <td id=\"T_bd0e5_row18_col4\" class=\"data row18 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row19_col0\" class=\"data row19 col0\" >if69</td>\n      <td id=\"T_bd0e5_row19_col1\" class=\"data row19 col1\" >qo9901</td>\n      <td id=\"T_bd0e5_row19_col2\" class=\"data row19 col2\" >0.2</td>\n      <td id=\"T_bd0e5_row19_col3\" class=\"data row19 col3\" >10</td>\n      <td id=\"T_bd0e5_row19_col4\" class=\"data row19 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row20_col0\" class=\"data row20 col0\" >if69</td>\n      <td id=\"T_bd0e5_row20_col1\" class=\"data row20 col1\" >td6427</td>\n      <td id=\"T_bd0e5_row20_col2\" class=\"data row20 col2\" >0.2</td>\n      <td id=\"T_bd0e5_row20_col3\" class=\"data row20 col3\" >10</td>\n      <td id=\"T_bd0e5_row20_col4\" class=\"data row20 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row21_col0\" class=\"data row21 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row21_col1\" class=\"data row21 col1\" >ag3979</td>\n      <td id=\"T_bd0e5_row21_col2\" class=\"data row21 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row21_col3\" class=\"data row21 col3\" >10</td>\n      <td id=\"T_bd0e5_row21_col4\" class=\"data row21 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row22_col0\" class=\"data row22 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row22_col1\" class=\"data row22 col1\" >as9583</td>\n      <td id=\"T_bd0e5_row22_col2\" class=\"data row22 col2\" >0.1</td>\n      <td id=\"T_bd0e5_row22_col3\" class=\"data row22 col3\" >10</td>\n      <td id=\"T_bd0e5_row22_col4\" class=\"data row22 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row23_col0\" class=\"data row23 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row23_col1\" class=\"data row23 col1\" >cd3007</td>\n      <td id=\"T_bd0e5_row23_col2\" class=\"data row23 col2\" >0.1</td>\n      <td id=\"T_bd0e5_row23_col3\" class=\"data row23 col3\" >10</td>\n      <td id=\"T_bd0e5_row23_col4\" class=\"data row23 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row24_col0\" class=\"data row24 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row24_col1\" class=\"data row24 col1\" >cp9270</td>\n      <td id=\"T_bd0e5_row24_col2\" class=\"data row24 col2\" >0.2</td>\n      <td id=\"T_bd0e5_row24_col3\" class=\"data row24 col3\" >10</td>\n      <td id=\"T_bd0e5_row24_col4\" class=\"data row24 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row25_col0\" class=\"data row25 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row25_col1\" class=\"data row25 col1\" >gs5098</td>\n      <td id=\"T_bd0e5_row25_col2\" class=\"data row25 col2\" >0.1</td>\n      <td id=\"T_bd0e5_row25_col3\" class=\"data row25 col3\" >10</td>\n      <td id=\"T_bd0e5_row25_col4\" class=\"data row25 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row26_col0\" class=\"data row26 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row26_col1\" class=\"data row26 col1\" >js5018</td>\n      <td id=\"T_bd0e5_row26_col2\" class=\"data row26 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row26_col3\" class=\"data row26 col3\" >10</td>\n      <td id=\"T_bd0e5_row26_col4\" class=\"data row26 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row27_col0\" class=\"data row27 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row27_col1\" class=\"data row27 col1\" >kr2086</td>\n      <td id=\"T_bd0e5_row27_col2\" class=\"data row27 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row27_col3\" class=\"data row27 col3\" >10</td>\n      <td id=\"T_bd0e5_row27_col4\" class=\"data row27 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row28_col0\" class=\"data row28 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row28_col1\" class=\"data row28 col1\" >mf9479</td>\n      <td id=\"T_bd0e5_row28_col2\" class=\"data row28 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row28_col3\" class=\"data row28 col3\" >10</td>\n      <td id=\"T_bd0e5_row28_col4\" class=\"data row28 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row29_col0\" class=\"data row29 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row29_col1\" class=\"data row29 col1\" >ms5578</td>\n      <td id=\"T_bd0e5_row29_col2\" class=\"data row29 col2\" >0.1</td>\n      <td id=\"T_bd0e5_row29_col3\" class=\"data row29 col3\" >10</td>\n      <td id=\"T_bd0e5_row29_col4\" class=\"data row29 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row30_col0\" class=\"data row30 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row30_col1\" class=\"data row30 col1\" >ri9247</td>\n      <td id=\"T_bd0e5_row30_col2\" class=\"data row30 col2\" >0.2</td>\n      <td id=\"T_bd0e5_row30_col3\" class=\"data row30 col3\" >10</td>\n      <td id=\"T_bd0e5_row30_col4\" class=\"data row30 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row31_col0\" class=\"data row31 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row31_col1\" class=\"data row31 col1\" >sk6139</td>\n      <td id=\"T_bd0e5_row31_col2\" class=\"data row31 col2\" >0.0</td>\n      <td id=\"T_bd0e5_row31_col3\" class=\"data row31 col3\" >10</td>\n      <td id=\"T_bd0e5_row31_col4\" class=\"data row31 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row32_col0\" class=\"data row32 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row32_col1\" class=\"data row32 col1\" >sz2492</td>\n      <td id=\"T_bd0e5_row32_col2\" class=\"data row32 col2\" >0.2</td>\n      <td id=\"T_bd0e5_row32_col3\" class=\"data row32 col3\" >10</td>\n      <td id=\"T_bd0e5_row32_col4\" class=\"data row32 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row33_col0\" class=\"data row33 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row33_col1\" class=\"data row33 col1\" >xw6141</td>\n      <td id=\"T_bd0e5_row33_col2\" class=\"data row33 col2\" >0.4</td>\n      <td id=\"T_bd0e5_row33_col3\" class=\"data row33 col3\" >10</td>\n      <td id=\"T_bd0e5_row33_col4\" class=\"data row33 col4\" >Within the 10 KSU allocation per quarter</td>\n    </tr>\n    <tr>\n      <td id=\"T_bd0e5_row34_col0\" class=\"data row34 col0\" >ng72</td>\n      <td id=\"T_bd0e5_row34_col1\" class=\"data row34 col1\" >ym7079</td>\n      <td id=\"T_bd0e5_row34_col2\" class=\"data row34 col2\" >12.8</td>\n      <td id=\"T_bd0e5_row34_col3\" class=\"data row34 col3\" >10</td>\n      <td id=\"T_bd0e5_row34_col4\" class=\"data row34 col4\" >Usage exceeds allocation by 2.8</td>\n    </tr>\n  </tbody>\n</table>\n"};
         new ITable(table, dt_args);
     });
 </script>
@@ -328,6 +236,8 @@ grid-auto-rows: minmax(0, 1fr);">
 </ul>
 <strong>Minimum compute allocation</strong>
 <p>Any user can use up to certain about of compute per quarter without any request. Please, visit the thread asociated to each project to know more about the limits.</p>
+<strong>Calculate your SU usage</strong>
+<p>You can calculate your SU usage with the <a href="https://paocorrales.shinyapps.io/SU_calculator/">SU calculator app</a>.</p>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
     <template>Expand</template>
@@ -425,7 +335,7 @@ grid-auto-rows: minmax(0, 1fr);">
 </tbody>
 </table>
 <p>*gb02 panel: Navid Constantinou, Paul Gregory, Bethan White, Chenhui Jin, Andrew Brown, and Sam Green</p>
-<p>Last update: 30-09-2025 12:09</p>
+<p>Last update: 01-10-2025 13:10</p>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
     <template>Expand</template>
@@ -442,242 +352,236 @@ grid-auto-rows: minmax(0, 1fr);">
 
 
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
       }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
-        }
-        return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -685,161 +589,185 @@ grid-auto-rows: minmax(0, 1fr);">
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 </div> <!-- /container fluid -->
 
 <script type="application/javascript">
