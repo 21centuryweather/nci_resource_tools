@@ -2,7 +2,7 @@ name: Generate NCI resources report
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 18 * * *'
 
 jobs:
   runcode:
