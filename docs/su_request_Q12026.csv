@@ -1,18 +1,25 @@
 project,user,allocation
 gb02, ARE, 100
+gb02, sl5165, 500
 gb02, ad0579, 100
-gb02, pag548, 200
+gb02, pag548, 100
+gb02, qg8515, 700
 gb02, pc2687, 50
+gb02, bw6466, 500
 fy29, ARE, 100
 fy29, mjl561, 100
+fy29, qo9901, 100
+fy29, hl7139, 200
+fy29, cy8964, 200
+fy29, qg8515, 50
 if69, ARE, 100
 if69, mr4682, 25
 if69, rq1991, 50
 if69, qj2249, 25
 if69, cj0591, 75
-if69, mr4682, 100
-if69, qo9901, 145
+if69, mr4682, 200
+if69, qo9901, 245
 ng72, ARE, 100
-ng72, js2535, 50
+ng72, js2535, 250
 ng72, lk5320, 352
 
