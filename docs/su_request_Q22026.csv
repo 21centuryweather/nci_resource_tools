@@ -1,12 +1,15 @@
 project,user,allocation
 gb02, ARE, 100
-gb02, ab4502, 150
-gb02, ab4502, 1000
+gb02, ab4502, 1150
 fy29, ARE, 100
 fy29, hl7139, 200
 if69, ARE, 100
 if69, cj0591, 100
+if69, qo9901, 50
 if69, rq1991, 50
+if69, mr4682, 30
+if69, mm6452, 10
 ng72, ARE, 100
 ng72, oa1927, 500
 ng72, lk5320, 352
+ng72, cd3007, 15
