@@ -83,7 +83,7 @@ def load_storage_allocations(DATA_PATH):
 
 
     allocation_storage = (
-        allocation_storage[['project', 'user', 'allocation']]
+        allocation_storage[['project', 'user', 'allocation', 'filesystem']]
         .rename(columns={
             'project': 'Project',
             'user': 'User',
