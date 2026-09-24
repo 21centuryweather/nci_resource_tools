@@ -2,7 +2,7 @@ import subprocess
 import pandas as pd
 import re
 import datetime as dt
-
+import numpy as np
 
 def convert_size_to_bytes(size_str):
     """
