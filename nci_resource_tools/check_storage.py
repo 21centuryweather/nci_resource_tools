@@ -75,7 +75,11 @@ def load_storage_allocations(DATA_PATH):
         allocation_storage['allocation'].astype(str) + 'G'
     )
 
-    allocation_storage.loc[~allocation_storage['valid'], 'allocation'] = '0G'
+    allocation_storage = allocation_storage[
+        allocation_storage['valid']
+    ].copy()
+    
+    #allocation_storage.loc[~allocation_storage['valid'], 'allocation'] = '0G'
 
 
     allocation_storage = (
@@ -83,7 +87,8 @@ def load_storage_allocations(DATA_PATH):
         .rename(columns={
             'project': 'Project',
             'user': 'User',
-            'allocation': 'Allocation'
+            'allocation': 'Allocation',
+            'filesystem': 'Filesystem'
         })
     )
     return allocation_storage
@@ -121,7 +126,7 @@ def create_table_storage_user(storage_usage,
     ].copy()
 
     user_storage_df = user_storage_df.merge(
-        allocation_storage, on=["Project", "User"], how="left",
+        allocation_storage, on=["Project", "User", "Filesystem"], how="left",
     )
 
         # Fill missing allocations with project-specific defaults
