@@ -1,0 +1,448 @@
+<!doctype html><html><head><meta charset=utf8><meta name=robots content="noindex,nofollow"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Gadi Data Stocktake</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column; summary tiles → project strip → owner chart (storage | inodes) → full table */
+:root {
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #6f6e69;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --ring: rgba(11,11,11,0.10);
+  --accent: #2a78d6;
+  --chip-bg: #fff3d6;
+  --chip-ink: #6b4a00;
+  --chip-bg-2: #e8f0fb;
+  --chip-ink-2: #184f95;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4;
+  --recent: #2a78d6; --stale: #86b6ef;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7; --muted: #9a9890;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10); --accent: #3987e5;
+    --chip-bg: #3a2c08; --chip-ink: #f5c95c; --chip-bg-2: #13284a; --chip-ink-2: #9ec5f4;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181;
+    --recent: #3987e5; --stale: #184f95;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7; --muted: #9a9890;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10); --accent: #3987e5;
+  --chip-bg: #3a2c08; --chip-ink: #f5c95c; --chip-bg-2: #13284a; --chip-ink-2: #9ec5f4;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181;
+  --recent: #3987e5; --stale: #184f95;
+  color-scheme: dark;
+}
+body { background: var(--page); color: var(--ink); font: 400 15px/1.5 var(--sans); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 16px; padding-block: 32px 64px; display: grid; gap: 40px; }
+header { display: grid; gap: 8px; }
+.eyebrow { font: 500 12px/1.4 var(--mono); color: var(--muted); letter-spacing: 0.02em; }
+h1 { font: 600 clamp(28px, 4.5vw, 40px)/1.1 var(--sans); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font: 600 20px/1.25 var(--sans); margin: 0; text-wrap: balance; }
+.lede { color: var(--ink-2); max-width: 65ch; margin: 0; }
+.mono { font-family: var(--mono); }
+
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 720px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tile { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 14px 16px; display: grid; gap: 2px; min-width: 0; }
+.tile .label { font-size: 13px; color: var(--ink-2); }
+.tile .value { font-size: 28px; font-weight: 600; line-height: 1.2; }
+.tile .sub { font-size: 12px; color: var(--muted); }
+
+section { display: grid; gap: 16px; min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 20px; display: grid; gap: 16px; min-width: 0; }
+@media (max-width: 520px) { .panel { padding: 14px; } }
+
+/* Project strip */
+.projects { display: grid; gap: 10px; }
+.prow { display: grid; grid-template-columns: 56px minmax(0, 1fr) 150px; gap: 12px; align-items: center; }
+@media (max-width: 520px) { .prow { grid-template-columns: 48px minmax(0, 1fr) 96px; gap: 8px; } }
+.pname { font: 500 14px var(--mono); display: flex; align-items: center; gap: 6px; }
+.sw { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.pnum { font-size: 13px; color: var(--ink-2); text-align: right; font-variant-numeric: tabular-nums; line-height: 1.3; }
+.pnum b { color: var(--ink); font-weight: 600; }
+
+/* Controls */
+.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--axis); border-radius: 8px; padding: 2px; gap: 2px; }
+.seg button { font: 500 13px var(--sans); color: var(--ink-2); background: transparent; border: 0; border-radius: 6px; padding: 5px 12px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+.seg button:focus-visible, .search:focus-visible, th button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.search { font: 400 14px var(--mono); color: var(--ink); background: var(--page); border: 1px solid var(--axis); border-radius: 8px; padding: 6px 10px; width: 180px; max-width: 100%; }
+.ctl-label { font-size: 12px; color: var(--muted); margin-right: 4px; }
+.ctl { display: inline-flex; align-items: center; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+/* Bar chart */
+.chart { display: grid; gap: 0; min-width: 0; }
+.row, .axis { display: grid; grid-template-columns: 76px minmax(0, 1fr) 132px; gap: 12px; align-items: center; }
+@media (max-width: 520px) { .row, .axis { grid-template-columns: 64px minmax(0, 1fr) 84px; gap: 8px; } }
+.axis { height: 22px; }
+.ticks { position: relative; height: 100%; }
+.tick { position: absolute; bottom: 4px; transform: translateX(-50%); font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tick:first-child { transform: none; }
+.row { height: 28px; cursor: default; border-radius: 6px; }
+.row:hover, .row.active { background: color-mix(in srgb, var(--grid) 45%, transparent); }
+.owner { font: 500 13px var(--mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-left: 4px; }
+.track { position: relative; height: 100%; }
+.gridline { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--grid); }
+.gridline.base { background: var(--axis); }
+.bar { position: absolute; top: 6px; height: 16px; }
+.segm { position: absolute; top: 0; height: 100%; }
+.segm.end { border-radius: 0 4px 4px 0; }
+.val { font-size: 13px; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; display: flex; justify-content: flex-end; align-items: center; gap: 6px; padding-right: 4px; }
+.val .sec { color: var(--muted); font-size: 12px; }
+.chip { font-size: 11px; font-weight: 500; border-radius: 999px; padding: 1px 7px; white-space: nowrap; }
+.chip.old { background: var(--chip-bg); color: var(--chip-ink); }
+.chip.small { background: var(--chip-bg-2); color: var(--chip-ink-2); }
+.more { justify-self: start; font: 500 13px var(--sans); color: var(--accent); background: none; border: 0; padding: 4px 0; cursor: pointer; }
+.more:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.note { font-size: 13px; color: var(--muted); margin: 0; max-width: 75ch; }
+.empty { color: var(--muted); font-size: 14px; padding: 12px 4px; }
+
+/* Tooltip */
+.tip { position: fixed; z-index: 10; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--ring); border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,0.14); padding: 10px 12px; font-size: 13px; min-width: 200px; max-width: 280px; display: grid; gap: 4px; }
+.tip .t-h { font: 600 14px var(--mono); }
+.tip .t-r { display: grid; grid-template-columns: 12px 1fr auto; gap: 8px; align-items: center; font-variant-numeric: tabular-nums; }
+.tip .t-r span:last-child { text-align: right; }
+.tip .t-f { color: var(--muted); font-size: 12px; border-top: 1px solid var(--grid); padding-top: 4px; margin-top: 2px; }
+
+/* Table */
+.tablewrap { overflow-x: auto; border: 1px solid var(--grid); border-radius: 8px; max-height: 520px; overflow-y: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--grid); }
+th:first-child, td:first-child { text-align: left; }
+td:first-child { font-family: var(--mono); }
+thead th { position: sticky; top: 0; background: var(--surface); z-index: 1; }
+th button { font: 600 12px var(--sans); color: var(--ink-2); background: none; border: 0; padding: 0; cursor: pointer; }
+th button[aria-sort="descending"]::after { content: " ↓"; }
+th button[aria-sort="ascending"]::after { content: " ↑"; }
+td.dim { color: var(--muted); }
+details summary { cursor: pointer; font-weight: 500; font-size: 14px; color: var(--ink-2); }
+details[open] summary { margin-bottom: 10px; }
+footer { font-size: 12px; color: var(--muted); display: grid; gap: 4px; }
+footer code { font-family: var(--mono); }
+@media (prefers-reduced-motion: no-preference) { .segm { transition: width .2s ease, left .2s ease; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">/g/data · gb02 if69 fy29 ng72 su28 · scanned 2 Oct 2026 with rudu 1.5.1</div>
+    <h1>Gadi Data Stocktake</h1>
+    <p class="lede">Who owns the data across five NCI projects, how much of it has gone untouched for 100 days or more, and who is using up the inode quota.</p>
+  </header>
+
+  <div class="tiles" id="tiles"></div>
+
+  <section>
+    <h2>By project</h2>
+    <div class="panel">
+      <div class="legend" aria-hidden="false">
+        <span><i class="sw" style="background:var(--recent)"></i>Accessed in the last 100 days</span>
+        <span><i class="sw" style="background:var(--stale)"></i>Not accessed for 100+ days</span>
+      </div>
+      <div class="projects" id="projects"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="owners-h">By owner</h2>
+    <div class="panel">
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Measure">
+          <button type="button" id="m-storage" aria-pressed="true">Storage</button>
+          <button type="button" id="m-inodes" aria-pressed="false">Inodes</button>
+        </div>
+        <div class="ctl" id="colour-ctl">
+          <span class="ctl-label">Colour by</span>
+          <div class="seg" role="group" aria-label="Colour by">
+            <button type="button" id="c-project" aria-pressed="true">Project</button>
+            <button type="button" id="c-age" aria-pressed="false">Access age</button>
+          </div>
+        </div>
+        <input class="search" id="search" type="search" placeholder="Find owner…" aria-label="Find owner" autocomplete="off">
+      </div>
+      <div class="legend" id="legend"></div>
+      <div class="chart" id="chart" role="img" aria-describedby="owners-h"></div>
+      <button type="button" class="more" id="more"></button>
+      <p class="note" id="note"></p>
+    </div>
+  </section>
+
+  <section>
+    <details class="panel" id="tbl-details">
+      <summary id="tbl-summary">Full table</summary>
+      <div class="tablewrap"><table id="table"></table></div>
+    </details>
+  </section>
+
+  <footer>
+    <div>Sizes are disk usage in decimal units (1 TB = 10¹² bytes), summed per file owner from <code>rudu --show-files true --show-owner --show-atime</code>. Inodes are files plus directories.</div>
+    <div>Inode counts run about 5% below NCI's quota figures, which also count project-group files outside <code>/g/data/&lt;project&gt;</code>. Read them as a lower bound.</div>
+    <div>Source CSVs: <code>results/owner_storage.csv</code>, <code>results/owner_inodes.csv</code>.</div>
+  </footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script type="application/json" id="data">{"projects":["fy29","gb02","if69","ng72","su28"],"scanned":"2026-10-02","owners":[{"o":"root","b":{},"i":{"fy29":1,"gb02":1,"if69":1,"ng72":1,"su28":1},"stale":0,"files":0,"dirs":5},{"o":"yb4721","b":{"fy29":7400030208},"i":{"fy29":1997},"stale":7391481856,"files":1812,"dirs":185},{"o":"lk5320","b":{"fy29":1494187040768,"gb02":22904700928,"ng72":1362706178048},"i":{"fy29":24670,"gb02":1994,"ng72":3802},"stale":851076198400,"files":24558,"dirs":5908},{"o":"sl0240","b":{"fy29":5357568,"gb02":1931178467328},"i":{"fy29":13,"gb02":20465},"stale":1931180130304,"files":17706,"dirs":2772},{"o":"ab4502","b":{"fy29":96915456,"gb02":100971479040,"ng72":815030157312},"i":{"fy29":130,"gb02":45250,"ng72":58447},"stale":154296844288,"files":90566,"dirs":13261},{"o":"bw6466","b":{"fy29":5233759076352,"gb02":805922488320},"i":{"fy29":44557,"gb02":109},"stale":4836282114048,"files":43827,"dirs":839},{"o":"mjl561","b":{"fy29":2285274525696,"gb02":663963283456,"ng72":56786124800,"su28":289411072},"i":{"fy29":6331,"gb02":28801,"ng72":139,"su28":35},"stale":2633725198336,"files":33137,"dirs":2169},{"o":"ha2606","b":{"fy29":12195516416},"i":{"fy29":91},"stale":12195516416,"files":56,"dirs":35},{"o":"mg8987","b":{"fy29":323998326784},"i":{"fy29":200906},"stale":323982512128,"files":184869,"dirs":16037},{"o":"hl7139","b":{"fy29":1492847878144,"ng72":9727553536},"i":{"fy29":15595,"ng72":97231},"stale":126951829504,"files":102775,"dirs":10051},{"o":"jma548","b":{"fy29":6685061120,"gb02":5810513772544},"i":{"fy29":14,"gb02":65898},"stale":456198651904,"files":65900,"dirs":12},{"o":"mf9078","b":{"fy29":4391682781184,"gb02":60359397376},"i":{"fy29":256017,"gb02":2429},"stale":1833569415168,"files":249820,"dirs":8626},{"o":"mn8773","b":{"fy29":21973311488},"i":{"fy29":25},"stale":0,"files":14,"dirs":11},{"o":"mxr581","b":{"fy29":451403337728},"i":{"fy29":121990},"stale":85533990912,"files":102582,"dirs":19408},{"o":"qo9901","b":{"fy29":484515360768,"if69":699652653056},"i":{"fy29":57372,"if69":18731},"stale":718928936960,"files":73171,"dirs":2932},{"o":"sd9490","b":{"fy29":955741356032,"gb02":1499480064,"ng72":1262864084992},"i":{"fy29":10167,"gb02":57289,"ng72":12423},"stale":758632923136,"files":73116,"dirs":6763},{"o":"sho561","b":{"fy29":222157180928,"gb02":18258153472},"i":{"fy29":8270,"gb02":5661},"stale":238685405184,"files":11978,"dirs":1953},{"o":"sl5165","b":{"fy29":39677952,"gb02":35463909961728,"if69":14149820416},"i":{"fy29":89,"gb02":82226,"if69":226},"stale":1945034039296,"files":77566,"dirs":4975},{"o":"nxg561","b":{"gb02":3198502424576},"i":{"gb02":235968},"stale":5739458560,"files":235939,"dirs":29},{"o":"mh6543","b":{"gb02":3721283104768},"i":{"gb02":10149},"stale":3710755598336,"files":8999,"dirs":1150},{"o":"cj0591","b":{"gb02":696849805312,"if69":34705395712,"su28":288010240},"i":{"gb02":379073,"if69":17790,"su28":9},"stale":19814936576,"files":394007,"dirs":2865},{"o":"pp7885","b":{"gb02":732569600},"i":{"gb02":581},"stale":617177088,"files":435,"dirs":146},{"o":"mb0427","b":{"gb02":158126882816,"if69":2042531893248},"i":{"gb02":22687,"if69":80305},"stale":1633272115200,"files":98309,"dirs":4683},{"o":"ts8639","b":{"gb02":7162884096},"i":{"gb02":13136},"stale":7162884096,"files":12289,"dirs":847},{"o":"dh3280","b":{"gb02":87018954752},"i":{"gb02":72417},"stale":72890593280,"files":65366,"dirs":7051},{"o":"sc5932","b":{"gb02":3068231094272,"ng72":428675072},"i":{"gb02":123311,"ng72":1367},"stale":862003183616,"files":114903,"dirs":9775},{"o":"ad0579","b":{"gb02":1592898187264,"ng72":41123270656},"i":{"gb02":5475,"ng72":1952},"stale":1475473674240,"files":6599,"dirs":828},{"o":"mm6452","b":{"if69":1030096125952},"i":{"gb02":1,"if69":12685},"stale":14711721984,"files":12472,"dirs":214},{"o":"nt4273","b":{"gb02":79089299456},"i":{"gb02":1062,"ng72":2},"stale":44391587840,"files":964,"dirs":100},{"o":"wl0799","b":{"gb02":209367355392},"i":{"gb02":2691},"stale":4479758336,"files":2498,"dirs":193},{"o":"il1874","b":{"gb02":129972838400},"i":{"gb02":7578},"stale":124667764736,"files":6554,"dirs":1024},{"o":"cd3022","b":{"gb02":985096192},"i":{"gb02":43106},"stale":910774272,"files":41567,"dirs":1539},{"o":"jt5160","b":{"gb02":8261001216,"if69":3741667328},"i":{"gb02":399,"if69":1149},"stale":12002660352,"files":1413,"dirs":135},{"o":"jt0319","b":{"gb02":302327754752,"ng72":117004230656},"i":{"gb02":57367,"ng72":243},"stale":170026848256,"files":49936,"dirs":7674},{"o":"ef1645","b":{"gb02":212806336512},"i":{"gb02":8520},"stale":199134613504,"files":8012,"dirs":508},{"o":"ad1803","b":{"gb02":41861120},"i":{"gb02":40},"stale":36102144,"files":27,"dirs":13},{"o":"ps3482","b":{},"i":{"gb02":1},"stale":0,"files":0,"dirs":1},{"o":"sm5259","b":{"gb02":939978752,"ng72":833036288},"i":{"gb02":587,"ng72":182},"stale":0,"files":639,"dirs":130},{"o":"sg3790","b":{"gb02":3532062720},"i":{"gb02":282},"stale":1630208,"files":265,"dirs":17},{"o":"pag548","b":{"gb02":1962544578560},"i":{"gb02":295584},"stale":617293991936,"files":251296,"dirs":44288},{"o":"ab8992","b":{"gb02":1327927328768},"i":{"gb02":197234},"stale":37772156928,"files":151212,"dirs":46022},{"o":"ajd548","b":{"gb02":73067368448},"i":{"gb02":144},"stale":73067368448,"files":142,"dirs":2},{"o":"ak2642","b":{"gb02":3515796193280},"i":{"gb02":160536},"stale":3515796193280,"files":159467,"dirs":1069},{"o":"as5672","b":{},"i":{"gb02":7},"stale":0,"files":2,"dirs":5},{"o":"asp561","b":{"gb02":53252096},"i":{"gb02":2},"stale":53252096,"files":1,"dirs":1},{"o":"cbe563","b":{"gb02":24576},"i":{"gb02":2},"stale":24576,"files":1,"dirs":1},{"o":"cc6171","b":{"gb02":88710381568},"i":{"gb02":2727},"stale":88710381568,"files":1485,"dirs":1242},{"o":"cm1405","b":{},"i":{"gb02":1},"stale":0,"files":0,"dirs":1},{"o":"cxh603","b":{"gb02":9010913280,"ng72":837742309376},"i":{"gb02":434,"ng72":18167},"stale":225705656320,"files":18488,"dirs":113},{"o":"dr6273","b":{"gb02":140296192,"ng72":69975261184},"i":{"gb02":27,"ng72":1465},"stale":43987894272,"files":1386,"dirs":106},{"o":"ec0044","b":{"gb02":18601275392},"i":{"gb02":4341},"stale":18601267200,"files":3823,"dirs":518},{"o":"em3807","b":{"gb02":8192},"i":{"gb02":2},"stale":8192,"files":1,"dirs":1},{"o":"jl1950","b":{"gb02":70203568128},"i":{"gb02":300},"stale":70203568128,"files":296,"dirs":4},{"o":"hh0258","b":{"gb02":16384},"i":{"gb02":4},"stale":4096,"files":2,"dirs":2},{"o":"js2535","b":{"ng72":309338910720},"i":{"gb02":6,"ng72":21274},"stale":309338910720,"files":21210,"dirs":70},{"o":"lh5313","b":{"gb02":4714496},"i":{"gb02":11},"stale":4714496,"files":9,"dirs":2},{"o":"lp9537","b":{"gb02":2211885056},"i":{"gb02":6977},"stale":663511040,"files":6346,"dirs":631},{"o":"lw5085","b":{"gb02":1410827685888},"i":{"gb02":453},"stale":53691826176,"files":390,"dirs":63},{"o":"mm5133","b":{"ng72":41177088},"i":{"gb02":7,"ng72":20},"stale":2056192,"files":20,"dirs":7},{"o":"ms2920","b":{"ng72":111583232},"i":{"gb02":7,"ng72":25},"stale":8192,"files":24,"dirs":8},{"o":"nc3020","b":{"gb02":72429568},"i":{"gb02":7},"stale":72429568,"files":5,"dirs":2},{"o":"pc2687","b":{"gb02":345633935360,"su28":1425461788672},"i":{"gb02":85847,"su28":7969},"stale":238243803136,"files":82514,"dirs":11302},{"o":"sg7549","b":{"gb02":681365348352,"su28":14724431507456},"i":{"gb02":53347,"su28":379770},"stale":2124188540928,"files":412589,"dirs":20528},{"o":"jl8556","b":{"gb02":11260321562624},"i":{"gb02":67013},"stale":246079254528,"files":67008,"dirs":5},{"o":"bx1902","b":{"gb02":155648},"i":{"gb02":4,"if69":3},"stale":0,"files":3,"dirs":4},{"o":"qr1706","b":{"if69":929967611904},"i":{"gb02":7,"if69":5065},"stale":0,"files":4784,"dirs":288},{"o":"rf4654","b":{},"i":{"gb02":2},"stale":0,"files":0,"dirs":2},{"o":"sc1326","b":{"gb02":5808128,"if69":235065651200},"i":{"gb02":120,"if69":125695},"stale":135463858176,"files":112468,"dirs":13347},{"o":"sv6923","b":{"gb02":148299776},"i":{"gb02":86},"stale":148295680,"files":60,"dirs":26},{"o":"sx4303","b":{"gb02":16384},"i":{"gb02":14},"stale":16384,"files":6,"dirs":8},{"o":"sz2492","b":{"ng72":365273374720},"i":{"gb02":4,"ng72":16049},"stale":217919823872,"files":15632,"dirs":421},{"o":"tm4359","b":{"gb02":4096},"i":{"gb02":3},"stale":4096,"files":1,"dirs":2},{"o":"wz8904","b":{"gb02":1409106337792},"i":{"gb02":104526},"stale":1409106337792,"files":97451,"dirs":7075},{"o":"zz6006","b":{"ng72":247621795840},"i":{"gb02":2,"ng72":35786},"stale":229126811648,"files":35699,"dirs":89},{"o":"lr0632","b":{"if69":5223682539520},"i":{"if69":70375},"stale":4731424940032,"files":70108,"dirs":267},{"o":"tp4064","b":{"if69":361704267776},"i":{"if69":5819},"stale":272041443328,"files":5598,"dirs":221},{"o":"rk9077","b":{"if69":145520824320},"i":{"if69":35078},"stale":145520738304,"files":34458,"dirs":620},{"o":"ls3248","b":{"if69":4593322246144},"i":{"if69":41456},"stale":3461786488832,"files":38258,"dirs":3198},{"o":"ak5887","b":{"if69":58952155136},"i":{"if69":770},"stale":58952155136,"files":687,"dirs":83},{"o":"ah2717","b":{"if69":8254259200},"i":{"if69":5329},"stale":8141901824,"files":4595,"dirs":734},{"o":"bl6491","b":{"if69":36486815744},"i":{"if69":25590},"stale":36475502592,"files":15761,"dirs":9829},{"o":"ad5509","b":{"if69":180805632},"i":{"if69":142},"stale":13189120,"files":123,"dirs":19},{"o":"pd1739","b":{"if69":9221173248},"i":{"if69":58},"stale":0,"files":54,"dirs":4},{"o":"aw1142","b":{"if69":414404608},"i":{"if69":4937},"stale":0,"files":4028,"dirs":909},{"o":"as8561","b":{"if69":131435003904},"i":{"if69":774},"stale":38419906560,"files":718,"dirs":56},{"o":"cd3007","b":{"if69":99577856,"ng72":1395160100864},"i":{"if69":2,"ng72":105751},"stale":40427417600,"files":96569,"dirs":9184},{"o":"cxa561","b":{"if69":11283591168},"i":{"if69":19480},"stale":9540579328,"files":18554,"dirs":926},{"o":"cxj565","b":{},"i":{"if69":1},"stale":0,"files":0,"dirs":1},{"o":"mm7092","b":{"if69":13443563520},"i":{"if69":75},"stale":9456320512,"files":69,"dirs":6},{"o":"mr4682","b":{"if69":1256947712},"i":{"if69":14},"stale":1256947712,"files":12,"dirs":2},{"o":"ms0476","b":{},"i":{"if69":1},"stale":0,"files":0,"dirs":1},{"o":"nxm561","b":{"if69":2820449943552},"i":{"if69":738},"stale":0,"files":734,"dirs":4},{"o":"qj2249","b":{"if69":462799917056},"i":{"if69":45867},"stale":388486123520,"files":44713,"dirs":1154},{"o":"rq1991","b":{"if69":200704},"i":{"if69":34},"stale":200704,"files":24,"dirs":10},{"o":"td6427","b":{"if69":2838544384},"i":{"if69":3537},"stale":2838544384,"files":3524,"dirs":13},{"o":"yz9294","b":{"if69":7834939392},"i":{"if69":24101},"stale":0,"files":19995,"dirs":4106},{"o":"ri9247","b":{"ng72":1931939491840},"i":{"ng72":48009},"stale":1926590267392,"files":40627,"dirs":7382},{"o":"xw6141","b":{"ng72":1009627897856},"i":{"ng72":47768},"stale":557681217536,"files":44180,"dirs":3588},{"o":"pg1235","b":{},"i":{"ng72":1},"stale":0,"files":0,"dirs":1},{"o":"hc0407","b":{"ng72":97632886784},"i":{"ng72":194},"stale":97632886784,"files":119,"dirs":75},{"o":"ms5578","b":{"ng72":107654639616},"i":{"ng72":26061},"stale":106823684096,"files":23353,"dirs":2708},{"o":"as9583","b":{"ng72":67088871424},"i":{"ng72":1642},"stale":67088871424,"files":1391,"dirs":251},{"o":"mf9479","b":{"ng72":17434836992},"i":{"ng72":260},"stale":17434836992,"files":233,"dirs":27},{"o":"oa1927","b":{"ng72":2450229723136},"i":{"ng72":528394},"stale":1943270572032,"files":478504,"dirs":49890},{"o":"pv3484","b":{"ng72":17008857088},"i":{"ng72":13036},"stale":17008857088,"files":12290,"dirs":746},{"o":"kl9722","b":{"ng72":1596366848},"i":{"ng72":284},"stale":1596366848,"files":265,"dirs":19},{"o":"fk0558","b":{"ng72":66239926272},"i":{"ng72":145800},"stale":66239926272,"files":145424,"dirs":376},{"o":"ks3902","b":{"ng72":1813774336},"i":{"ng72":2439},"stale":1813774336,"files":2430,"dirs":9},{"o":"nk2247","b":{"ng72":56375123968},"i":{"ng72":3417},"stale":463958016,"files":2840,"dirs":577},{"o":"ag3979","b":{},"i":{"ng72":5},"stale":0,"files":0,"dirs":5},{"o":"cp9270","b":{"ng72":287818838016},"i":{"ng72":186923},"stale":152966529024,"files":186772,"dirs":151},{"o":"gp8431","b":{"ng72":3825664},"i":{"ng72":1005},"stale":4096,"files":939,"dirs":66},{"o":"gs5098","b":{"ng72":175045705728},"i":{"ng72":48},"stale":175045705728,"files":43,"dirs":5},{"o":"jd2435","b":{"ng72":11350265856},"i":{"ng72":39},"stale":1478656,"files":35,"dirs":4},{"o":"js5018","b":{"ng72":67690430464},"i":{"ng72":2623},"stale":67576782848,"files":2253,"dirs":370},{"o":"kr2086","b":{"ng72":11513806848},"i":{"ng72":359},"stale":2197073920,"files":296,"dirs":63},{"o":"rr2600","b":{"ng72":245432320},"i":{"ng72":222},"stale":232267776,"files":189,"dirs":33},{"o":"sk6139","b":{"ng72":1114112},"i":{"ng72":32},"stale":0,"files":15,"dirs":17},{"o":"wz4975","b":{"ng72":952567689216},"i":{"ng72":36928},"stale":941341282304,"files":36894,"dirs":34},{"o":"ym7079","b":{},"i":{"ng72":1},"stale":0,"files":0,"dirs":1},{"o":"yz1881","b":{"ng72":1064960},"i":{"ng72":8},"stale":1064960,"files":6,"dirs":2},{"o":"zm5261","b":{},"i":{"ng72":1},"stale":0,"files":0,"dirs":1},{"o":"jn3312","b":{"su28":436609024},"i":{"su28":13936},"stale":193114112,"files":12747,"dirs":1189}]}</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById("data").textContent);
+  const P = D.projects;
+  const COL = Object.fromEntries(P.map((p, i) => [p, `var(--s${i + 1})`]));
+  const STALE_DAYS = 100;
+
+  const owners = D.owners.map(o => {
+    const bytes = P.reduce((s, p) => s + (o.b[p] || 0), 0);
+    const inodes = P.reduce((s, p) => s + (o.i[p] || 0), 0);
+    return { ...o, bytes, inodes, recent: bytes - o.stale, avg: o.files ? bytes / o.files : 0 };
+  });
+
+  const human = n => {
+    const u = ["B", "KB", "MB", "GB", "TB", "PB"];
+    let i = 0;
+    while (n >= 1000 && i < u.length - 1) { n /= 1000; i++; }
+    return `${n.toFixed(1)} ${u[i]}`;
+  };
+  const tickBytes = n => {
+    if (n === 0) return "0";
+    const u = ["B", "KB", "MB", "GB", "TB", "PB"];
+    let i = 0;
+    while (n >= 1000 && i < u.length - 1) { n /= 1000; i++; }
+    return `${+n.toFixed(1)} ${u[i]}`;
+  };
+  const compact = n => n >= 1e6 ? `${+(n / 1e6).toFixed(2)}M` : n >= 1e3 ? `${+(n / 1e3).toFixed(n >= 1e5 ? 0 : 1)}k` : `${n}`;
+  const comma = n => n.toLocaleString("en-AU");
+  const pct = (a, b) => b ? Math.round(100 * a / b) : 0;
+
+  // Flags that put state into form
+  const mostlyOld = o => o.bytes >= 1e11 && o.stale / o.bytes >= 0.9;
+  const smallFiles = o => o.inodes >= 50000 && o.files && o.avg < 5e6;
+
+  // Summary tiles
+  const totB = owners.reduce((s, o) => s + o.bytes, 0);
+  const totS = owners.reduce((s, o) => s + o.stale, 0);
+  const totI = owners.reduce((s, o) => s + o.inodes, 0);
+  const tiles = [
+    ["Total stored", human(totB), "across 5 projects"],
+    ["Not accessed for 100+ days", human(totS), `${pct(totS, totB)}% of all data`],
+    ["Inodes", compact(totI), `${comma(totI)} files and directories`],
+    ["Owners", `${owners.filter(o => o.bytes || o.inodes > 10).length}`, `${owners.length} including directory-only owners`],
+  ];
+  document.getElementById("tiles").innerHTML = tiles.map(([l, v, s]) =>
+    `<div class="tile"><span class="label">${l}</span><span class="value">${v}</span><span class="sub">${s}</span></div>`).join("");
+
+  // Project strip
+  const projTot = P.map(p => ({
+    p,
+    bytes: owners.reduce((s, o) => s + (o.b[p] || 0), 0),
+    inodes: owners.reduce((s, o) => s + (o.i[p] || 0), 0),
+  }));
+  // Per-project stale totals from the rudu scans (results/<proj>_20261002.csv root rows)
+  const projStale = {"fy29": 10046709211136, "gb02": 17983473872896, "if69": 11229546201088, "ng72": 8920070807552, "su28": 2100431306752};
+  const pMax = Math.max(...projTot.map(x => x.bytes));
+  document.getElementById("projects").innerHTML = projTot.sort((a, b) => b.bytes - a.bytes).map(x => {
+    const w = 100 * x.bytes / pMax, st = projStale[x.p] || 0, sw = w * st / x.bytes;
+    return `<div class="prow">
+      <span class="pname"><i class="sw" style="background:${COL[x.p]}"></i>${x.p}</span>
+      <div class="track" style="height:20px">
+        <div class="bar" style="top:2px;width:100%">
+          <div class="segm" style="left:0;width:max(1px, calc(${w - sw}% - 2px));background:var(--recent)"></div>
+          <div class="segm end" style="left:${w - sw}%;width:${sw}%;background:var(--stale)"></div>
+        </div>
+      </div>
+      <span class="pnum"><b>${human(x.bytes)}</b> · ${pct(st, x.bytes)}% old<br>${compact(x.inodes)} inodes</span>
+    </div>`;
+  }).join("");
+
+  // Owner chart state
+  const state = { measure: "storage", colour: "project", all: false, q: "", sortKey: null, sortDir: -1 };
+  const TOP = 25;
+  const $ = id => document.getElementById(id);
+
+  const segmentsFor = o => {
+    if (state.measure === "inodes") return P.filter(p => o.i[p]).map(p => ({ k: p, v: o.i[p], c: COL[p] }));
+    if (state.colour === "age") return [
+      { k: "Accessed in last 100 days", v: o.recent, c: "var(--recent)" },
+      { k: "Not accessed for 100+ days", v: o.stale, c: "var(--stale)" },
+    ].filter(s => s.v > 0);
+    return P.filter(p => o.b[p]).map(p => ({ k: p, v: o.b[p], c: COL[p] }));
+  };
+  const total = o => state.measure === "inodes" ? o.inodes : o.bytes;
+
+  const niceStep = raw => {
+    const e = Math.pow(10, Math.floor(Math.log10(raw)));
+    const f = raw / e;
+    return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * e;
+  };
+
+  function render() {
+    const q = state.q.trim().toLowerCase();
+    const sorted = owners.filter(o => total(o) > 0).sort((a, b) => total(b) - total(a));
+    const matched = q ? sorted.filter(o => o.o.toLowerCase().includes(q)) : sorted;
+    const shown = q || state.all ? matched : matched.slice(0, TOP);
+
+    // Legend
+    const leg = state.measure === "storage" && state.colour === "age"
+      ? [["Accessed in last 100 days", "var(--recent)"], ["Not accessed for 100+ days", "var(--stale)"]]
+      : P.map(p => [p, COL[p]]);
+    $("legend").innerHTML = leg.map(([k, c]) => `<span><i class="sw" style="background:${c}"></i><span class="${P.includes(k) ? "mono" : ""}">${k}</span></span>`).join("")
+      + (state.measure === "storage"
+        ? `<span><i class="chip old">Mostly old</i>90%+ untouched for 100 days</span>`
+        : `<span><i class="chip small">Small files</i>average file under 5 MB</span>`);
+
+    // Scale (shared max of everyone, so the axis does not jump while searching)
+    const max = Math.max(...sorted.map(total), 1);
+    const step = niceStep(max / 4);
+    const top = Math.ceil(max / step) * step;
+    const ticks = [];
+    for (let v = 0; v <= top + step / 2; v += step) ticks.push(v);
+    const fmtTick = state.measure === "inodes" ? compact : tickBytes;
+    const gl = ticks.map((v, i) => `<i class="gridline${i === 0 ? " base" : ""}" style="left:${100 * v / top}%"></i>`).join("");
+
+    let html = `<div class="axis"><span></span><div class="ticks">${ticks.map(v => `<span class="tick" style="left:${100 * v / top}%">${fmtTick(v)}</span>`).join("")}</div><span></span></div>`;
+    if (!shown.length) html += `<div class="empty">No owner matches “${state.q.replace(/[<>&]/g, "")}”.</div>`;
+    for (const o of shown) {
+      const segs = segmentsFor(o);
+      let cum = 0;
+      const bars = segs.map((s, i) => {
+        const w = 100 * s.v / top, left = cum;
+        cum += w;
+        const last = i === segs.length - 1;
+        const width = last ? `max(1px, ${w}%)` : `max(1px, calc(${w}% - 2px))`;
+        return `<i class="segm${last ? " end" : ""}" style="left:${left}%;width:${width};background:${s.c}"></i>`;
+      }).join("");
+      let val, chip = "";
+      if (state.measure === "inodes") {
+        val = compact(o.inodes);
+        if (smallFiles(o)) chip = `<i class="chip small">Small files</i>`;
+      } else {
+        val = human(o.bytes);
+        if (mostlyOld(o)) chip = `<i class="chip old">Mostly old</i>`;
+      }
+      html += `<div class="row" data-o="${o.o}" tabindex="0">
+        <span class="owner" title="${o.o}">${o.o}</span>
+        <div class="track">${gl}<div class="bar" style="left:0;right:0">${bars}</div></div>
+        <span class="val">${chip}<span>${val}</span></span>
+      </div>`;
+    }
+    $("chart").innerHTML = html;
+    $("chart").setAttribute("aria-label", `${state.measure === "inodes" ? "Inodes" : "Storage"} by owner, ${shown.length} owners shown`);
+
+    const btn = $("more");
+    btn.hidden = !!q || matched.length <= TOP;
+    btn.textContent = state.all ? `Show top ${TOP} only` : `Show all ${matched.length} owners`;
+
+    $("note").textContent = state.measure === "inodes"
+      ? "Inodes count files and directories. Owners with many small files can usually free inodes by bundling them into tar archives."
+      : state.colour === "age"
+        ? "Not accessed means no file read for 100 days or more, based on each file's last access time. Some files carry a 1970 access time from archive extraction and count as old."
+        : "Each bar is split by project. Hover or focus a row for the breakdown.";
+
+    $("colour-ctl").hidden = state.measure === "inodes";
+    renderTable();
+  }
+
+  // Tooltip
+  const tip = $("tip");
+  function showTip(row, x, y) {
+    const o = owners.find(z => z.o === row.dataset.o);
+    if (!o) return;
+    document.querySelectorAll(".row.active").forEach(r => r.classList.remove("active"));
+    row.classList.add("active");
+    const segs = segmentsFor(o);
+    const fmt = state.measure === "inodes" ? comma : human;
+    const tot = total(o);
+    let foot;
+    if (state.measure === "inodes") foot = `${comma(o.files)} files · ${comma(o.dirs)} directories${o.files ? ` · average file ${human(o.avg)}` : ""}`;
+    else foot = `${human(o.stale)} (${pct(o.stale, o.bytes)}%) not accessed for 100+ days · ${comma(o.files)} files`;
+    tip.innerHTML = `<div class="t-h">${o.o}</div>`
+      + segs.map(s => `<div class="t-r"><i class="sw" style="background:${s.c}"></i><span class="${P.includes(s.k) ? "mono" : ""}">${s.k}</span><span>${fmt(s.v)} · ${pct(s.v, tot)}%</span></div>`).join("")
+      + `<div class="t-r"><i></i><b>Total</b><b>${fmt(tot)}</b></div>`
+      + `<div class="t-f">${foot}</div>`;
+    tip.hidden = false;
+    const r = tip.getBoundingClientRect();
+    let left = x + 14, topY = y + 14;
+    if (left + r.width > innerWidth - 8) left = Math.max(8, x - r.width - 14);
+    if (topY + r.height > innerHeight - 8) topY = Math.max(8, y - r.height - 14);
+    tip.style.left = `${left}px`;
+    tip.style.top = `${topY}px`;
+  }
+  function hideTip() {
+    tip.hidden = true;
+    document.querySelectorAll(".row.active").forEach(r => r.classList.remove("active"));
+  }
+  $("chart").addEventListener("pointermove", e => {
+    const row = e.target.closest(".row");
+    row ? showTip(row, e.clientX, e.clientY) : hideTip();
+  });
+  $("chart").addEventListener("pointerleave", hideTip);
+  $("chart").addEventListener("focusin", e => {
+    const row = e.target.closest(".row");
+    if (row) { const b = row.getBoundingClientRect(); showTip(row, b.left + b.width * 0.4, b.bottom); }
+  });
+  $("chart").addEventListener("focusout", hideTip);
+
+  // Table
+  function renderTable() {
+    const inodes = state.measure === "inodes";
+    const cols = inodes
+      ? [["o", "Owner"], ["inodes", "Inodes"], ["files", "Files"], ["dirs", "Directories"], ["avg", "Avg file"], ...P.map(p => [`i:${p}`, p])]
+      : [["o", "Owner"], ["bytes", "Total"], ["stale", "100+ days old"], ["stalePct", "% old"], ...P.map(p => [`b:${p}`, p])];
+    const get = (o, k) => k === "stalePct" ? (o.bytes ? o.stale / o.bytes : 0)
+      : k.startsWith("i:") ? (o.i[k.slice(2)] || 0) : k.startsWith("b:") ? (o.b[k.slice(2)] || 0) : o[k];
+    const key = state.sortKey && cols.some(c => c[0] === state.sortKey) ? state.sortKey : (inodes ? "inodes" : "bytes");
+    const q = state.q.trim().toLowerCase();
+    const rows = owners.filter(o => (inodes ? o.inodes : o.bytes) > 0 && (!q || o.o.toLowerCase().includes(q)))
+      .sort((a, b) => {
+        const x = get(a, key), y = get(b, key);
+        return (typeof x === "string" ? x.localeCompare(y) : x - y) * state.sortDir;
+      });
+    const cell = (o, k) => {
+      const v = get(o, k);
+      if (k === "o") return v;
+      if (k === "stalePct") return `${pct(o.stale, o.bytes)}%`;
+      if (!v) return "";
+      if (k === "avg") return human(v);
+      if (inodes) return comma(v);
+      return human(v);
+    };
+    $("table").innerHTML = `<thead><tr>${cols.map(([k, l]) =>
+      `<th scope="col"><button type="button" data-k="${k}" ${k === key ? `aria-sort="${state.sortDir < 0 ? "descending" : "ascending"}"` : ""} class="${P.includes(l) ? "mono" : ""}">${l}</button></th>`).join("")}</tr></thead>
+      <tbody>${rows.map(o => `<tr>${cols.map(([k]) => `<td>${cell(o, k)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+    $("tbl-summary").textContent = `Full table · ${inodes ? "inodes" : "storage"} · ${rows.length} owners`;
+  }
+  $("table").addEventListener("click", e => {
+    const b = e.target.closest("button[data-k]");
+    if (!b) return;
+    const k = b.dataset.k;
+    if (state.sortKey === k) state.sortDir *= -1;
+    else { state.sortKey = k; state.sortDir = k === "o" ? 1 : -1; }
+    renderTable();
+  });
+
+  // Controls
+  const setPressed = (on, off) => { $(on).setAttribute("aria-pressed", "true"); $(off).setAttribute("aria-pressed", "false"); };
+  $("m-storage").onclick = () => { state.measure = "storage"; state.sortKey = null; state.sortDir = -1; setPressed("m-storage", "m-inodes"); render(); };
+  $("m-inodes").onclick = () => { state.measure = "inodes"; state.sortKey = null; state.sortDir = -1; setPressed("m-inodes", "m-storage"); render(); };
+  $("c-project").onclick = () => { state.colour = "project"; setPressed("c-project", "c-age"); render(); };
+  $("c-age").onclick = () => { state.colour = "age"; setPressed("c-age", "c-project"); render(); };
+  $("more").onclick = () => { state.all = !state.all; render(); };
+  $("search").addEventListener("input", e => { state.q = e.target.value; render(); });
+
+  render();
+})();
+</script>
+
+</body></html>
