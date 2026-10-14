@@ -19,9 +19,9 @@ ng72,sd9490,2000,gdata,2026/03/17,2026/12/31,https://21centuryweather.discourse.
 fy29,mxr581,300,gdata,2025/09/15,2026/03/15,https://21centuryweather.discourse.group/t/storage-request-for-regional-ocean-simulation-at-3km/1597
 fy29,mg8987,400,gdata,2026/08/19,2027/06/30,https://21centuryweather.discourse.group/t/fy29-storage-request-for-a-vectorised-climate-knowledge-database/2024
 fy29,lk5320, 2000,gdata/2026/10/08,NA,https://21centuryweather.discourse.group/t/2026-q4-fy29-compute-allocation-requests/2836/2
-fy29,lk5320, 1000,scratch/2026/10/08,NA,https://21centuryweather.discourse.group/t/2026-q4-fy29-compute-allocation-requests/2836/2
-fy29,sd9490, 1000,scratch/2026/10/08,NA,https://21centuryweather.discourse.group/t/2026-q4-fy29-compute-allocation-requests/2836/2
-
+fy29,lk5320, 1000,scratch,2026/10/08,NA,https://21centuryweather.discourse.group/t/2026-q4-fy29-compute-allocation-requests/2836/2
+fy29,sd9490, 1000,scratch,2026/10/08,NA,https://21centuryweather.discourse.group/t/2026-q4-fy29-compute-allocation-requests/2836/2
+fy29,em3807, 500,scratch,2026/10/14,Na,https://21centuryweather.discourse.group/t/2026-q4-fy29-compute-allocation-requests/2836/6
 
 gb02,sl5165,5000,gdata,2025/08/22,NA,https://21centuryweather.discourse.group/t/gb02-storage-request-for-am3-related-files/1519
 gb02,cj0591,300,gdata,2025/04/14,NA,https://21centuryweather.discourse.group/t/gb02-storage-allocation-request-for-detecting-and-tracking-weather-systems/1101
