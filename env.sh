@@ -5,11 +5,11 @@
 # Load the analysis3 conda environment
 module purge
 module use /g/data/xp65/public/modules
-module load conda/analysis3-26.02
+module load conda/analysis3-26.10
 
 # Load a virtual python environment built on xp65 - this includes 
 # 'pymunge' library used by Scott Wales' nci tools repo
-source /g/data/gb02/public/tools/venvs/dashboard_env/bin/activate
+source /g/data/gb02/public/tools/venvs/dashboard_venv/bin/activate
 
 # Root directory for this repo
 export ROOT=/g/data/gb02/public/code/nci_resource_tools
