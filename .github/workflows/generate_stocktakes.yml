@@ -1,0 +1,47 @@
+name: Generate Gadi stocktakes
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run daily and use an epoch-day check below for a true 48-hour cadence.
+    - cron: '17 20 * * *'
+    # Check for a finished PBS job every two hours and publish on the login node.
+    - cron: '47 */2 * * *'
+
+concurrency:
+  group: gadi-stocktake-submission
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check two-day schedule
+        id: cadence
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [[ "$EVENT_NAME" == workflow_dispatch ]] || \
+             { [[ "$EVENT_SCHEDULE" == '17 20 * * *' ]] && (( ($(date -u +%s) / 86400) % 2 == 1 )); }; then
+            echo 'due=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Submit and publish stocktakes on Gadi
+        uses: appleboy/ssh-action@v1.2.5
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          command_timeout: 10m
+          script: |
+            set -e
+            cd /g/data/gb02/public/code/nci_resource_tools
+            git pull --ff-only
+            if [ '${{ steps.cadence.outputs.due }}' = true ]; then
+              bash scripts/submit_stocktakes.sh
+            fi
+            bash scripts/publish_stocktakes.sh

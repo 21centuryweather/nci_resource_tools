@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#PBS -N rudu-stocktake
+#PBS -P gb02
+#PBS -q normal
+#PBS -l ncpus=4,mem=16GB,walltime=24:00:00
+#PBS -l storage=gdata/gb02+gdata/if69+gdata/fy29+gdata/ng72+gdata/su28+scratch/gb02+scratch/if69+scratch/fy29+scratch/ng72
+#PBS -l wd
+#PBS -m ae
+
+set -euo pipefail
+
+repo_dir=${PBS_O_WORKDIR:?PBS_O_WORKDIR is required}
+run_dir="$repo_dir/.stocktake_runs/${STOCKTAKE_RUN_ID:?STOCKTAKE_RUN_ID is required}"
+mkdir -p "$run_dir"
+trap 'status=$?; printf "%s\n" "$status" > "$run_dir/exit_status"' EXIT
+cd "$run_dir"
+
+"${RUDU_BIN:?RUDU_BIN is required}" \
+    --report gadi_gdata_stocktake.html \
+    --source /g/data/gb02 /g/data/if69 /g/data/fy29 /g/data/ng72 /g/data/su28 \
+    --report-title 'Gadi gdata Stocktake' \
+    --threads "${PBS_NCPUS:?PBS_NCPUS is required}"
+
+"$RUDU_BIN" \
+    --report gadi_scratch_stocktake.html \
+    --source /scratch/gb02 /scratch/if69 /scratch/fy29 /scratch/ng72 \
+    --report-title 'Gadi Scratch Stocktake' \
+    --threads "$PBS_NCPUS"
+
+test -s gadi_gdata_stocktake.html
+test -s gadi_scratch_stocktake.html
+touch complete
+echo "Both rudu reports completed in $run_dir"
