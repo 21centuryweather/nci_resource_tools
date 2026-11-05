@@ -15,13 +15,16 @@ mkdir -p "$run_dir"
 trap 'status=$?; printf "%s\n" "$status" > "$run_dir/exit_status"' EXIT
 cd "$run_dir"
 
-"${RUDU_BIN:?RUDU_BIN is required}" \
+module use /g/data/gb02/public/modules
+module load rudu
+
+rudu-linux \
     --report gadi_gdata_stocktake.html \
     --source /g/data/gb02 /g/data/if69 /g/data/fy29 /g/data/ng72 /g/data/su28 \
     --report-title 'Gadi gdata Stocktake' \
     --threads "${PBS_NCPUS:?PBS_NCPUS is required}"
 
-"$RUDU_BIN" \
+rudu-linux \
     --report gadi_scratch_stocktake.html \
     --source /scratch/gb02 /scratch/if69 /scratch/fy29 /scratch/ng72 \
     --report-title 'Gadi Scratch Stocktake' \
