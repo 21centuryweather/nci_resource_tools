@@ -150,9 +150,21 @@ footer { font-size: 12px; color: var(--muted); display: grid; gap: 4px; }
 footer code { font-family: var(--mono); overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: no-preference) { .segm { transition: width .2s ease, left .2s ease; } }
 </style>
+<link rel="stylesheet" href="site.css" data-resource-site-style>
 </head>
-<body>
+<body class="rudu-stocktake">
 <div class="wrap">
+<nav class="site-nav stocktake-nav" aria-label="Primary navigation" data-resource-site-nav>
+  <a class="site-brand" href="dashboard.html">
+    <img src="logo.png" alt="" width="36" height="36">
+    <span>21st Century Weather <small>Gadi resources</small></span>
+  </a>
+  <div class="site-nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="gadi_gdata_stocktake.html" aria-current="page">Gdata</a>
+    <a href="gadi_scratch_stocktake.html">Scratch</a>
+  </div>
+</nav>
   <header>
     <div class="eyebrow" id="eyebrow"></div>
     <h1>Gadi gdata Stocktake</h1>

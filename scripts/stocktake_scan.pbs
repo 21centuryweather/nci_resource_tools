@@ -32,5 +32,6 @@ rudu-linux \
 
 test -s gadi_gdata_stocktake.html
 test -s gadi_scratch_stocktake.html
+python3 "$repo_dir/scripts/polish_site.py" gadi_gdata_stocktake.html gadi_scratch_stocktake.html
 touch complete
 echo "Both rudu reports completed in $run_dir"

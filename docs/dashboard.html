@@ -53,6 +53,7 @@ ul.task-list li input[type="checkbox"] {
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
+<link rel="stylesheet" href="site.css" data-resource-site-style>
 </head>
 
 <body class="quarto-dashboard dashboard-fill fullcontent quarto-light">
@@ -74,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
         <div class="navbar-author">21st Century Weather</div>
       </div>
     </div>
-<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-usage" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#usage" data-scrolling="false" href="#usage" aria-controls="usage" aria-selected="true"><span class="nav-link-text">Usage</span></a></li><li class="nav-item" role="presentation"><a id="tab-projects" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#projects" data-scrolling="false" href="#projects" aria-controls="projects" aria-selected="false"><span class="nav-link-text">Projects</span></a></li></ul><div class="quarto-dashboard-links"><a class="quarto-dashboard-link" href="https://github.com/21centuryweather/nci_resource_tools"><i class="bi bi-github"></i></a></div></div></div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-usage" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#usage" data-scrolling="false" href="#usage" aria-controls="usage" aria-selected="true"><span class="nav-link-text">Usage</span></a></li><li class="nav-item" role="presentation"><a id="tab-projects" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#projects" data-scrolling="false" href="#projects" aria-controls="projects" aria-selected="false"><span class="nav-link-text">Projects</span></a></li></ul><div class="quarto-dashboard-links"><a class="site-link" href="gadi_gdata_stocktake.html">Gdata stocktake</a><a class="site-link" href="gadi_scratch_stocktake.html">Scratch stocktake</a><a class="quarto-dashboard-link" href="https://github.com/21centuryweather/nci_resource_tools"><i class="bi bi-github"></i></a></div></div></div>
 </nav>
 </header>
 <div class="page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">  
@@ -192,12 +193,8 @@ grid-auto-rows: minmax(0, 1fr);">
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
-<pre><code>CRITICAL : sl5165 has consumed 127.05% of their gb02 SU allocation
-CRITICAL : mr4682 has consumed 151.08% of their if69 SU allocation
-CRITICAL : lk5320 has consumed 100.76% of their ng72 SU allocation
-WARNING : oa1927 has consumed 78.87% of their ng72 SU allocation
-WARNING : sd9490 has consumed 84.52% of their ng72 SU allocation</code></pre>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<div class="allocation-overview"><h3>Allocation watch</h3><p>Quarterly SU usage across all users, including default allocations.</p><div class="allocation-totals"><div><strong>16</strong><span>Over allocation</span></div><div><strong>8</strong><span>75–100% used</span></div></div><ul><li><span><b>if69</b> · ls3248</span><strong>5860% used</strong></li><li><span><b>fy29</b> · sd9490</span><strong>1359% used</strong></li><li><span><b>fy29</b> · sho561</span><strong>539% used</strong></li><li><span><b>ng72</b> · cxh603</span><strong>454% used</strong></li><li><span><b>ng72</b> · gp8431</span><strong>284% used</strong></li></ul></div>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -319,16 +316,16 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <strong>How do I submit a compute allocation request?</strong>
-<p>On Cumulus, reply to the thread (<a href="https://21centuryweather.discourse.group/c/software-support/compute-requests-on-gb02/43"><code>gb02</code></a>, <a href="https://21centuryweather.discourse.group/c/modelling-science/compute-requests-for-fy29/46"><code>fy29</code></a>, <a href="https://21centuryweather.discourse.group/c/centre-project-2-sst-movs-and-weather-systems/compute-requests-for-if69/49"><code>if69</code></a>, <a href="https://21centuryweather.discourse.group/c/high-impact-weather/compute-requests-for-ng72/48"><code>ng72</code></a>) in the Compute Requests subcategory asociated to the NCI project you want to use.</p>
-<p>In you request, please include:</p>
+<p>On Cumulus, reply to the thread (<a href="https://21centuryweather.discourse.group/c/software-support/compute-requests-on-gb02/43"><code>gb02</code></a>, <a href="https://21centuryweather.discourse.group/c/modelling-science/compute-requests-for-fy29/46"><code>fy29</code></a>, <a href="https://21centuryweather.discourse.group/c/centre-project-2-sst-movs-and-weather-systems/compute-requests-for-if69/49"><code>if69</code></a>, <a href="https://21centuryweather.discourse.group/c/high-impact-weather/compute-requests-for-ng72/48"><code>ng72</code></a>) in the Compute Requests subcategory associated with the NCI project you want to use.</p>
+<p>In your request, please include:</p>
 <ul>
 <li>your NCI username,</li>
 <li>how much compute you request,</li>
-<li>a short description what is it for, and</li>
-<li>(for gb02 requests) explain how your plans are relevant to the centre-wide project and how is of interest to a wide range of people in the centre.ople in the centre.</li>
+<li>a short description of what it is for, and</li>
+<li>(for gb02 requests) explain how your plans are relevant to the centre-wide project and how they are of interest to a wide range of people in the centre.</li>
 </ul>
 <strong>Minimum compute allocation</strong>
-<p>Any user can use up to certain about of compute per quarter without any request. Please, visit the thread asociated to each project to know more about the limits.</p>
+<p>Any user can use up to a small amount of compute per quarter without any request. Please, visit the thread associated to each project to know more about the limits.</p>
 <strong>Calculate your SU usage</strong>
 <p>You can calculate your SU usage with the <a href="https://paocorrales.shinyapps.io/SU_calculator/">SU calculator app</a>.</p>
 </div>
@@ -445,17 +442,17 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <strong>How do I submit a storage allocation request?</strong>
-<p>On Cumulus, open a new thread for (<a href="https://21centuryweather.discourse.group/c/software-support/storage-allocation-requests-on-gb02/44"><code>gb02</code></a>, <a href="https://21centuryweather.discourse.group/c/modelling-science/storage-allocation-requests-for-fy29/47"><code>fy29</code></a>, <a href="https://21centuryweather.discourse.group/c/centre-project-2-sst-movs-and-weather-systems/storage-allocation-requests-for-if69/50"><code>if69</code></a>, <a href="https://21centuryweather.discourse.group/c/high-impact-weather/storage-allocation-requests-for-ng72/51"><code>ng72</code></a>) in the Storage Requests subcategory asociated to the NCI project you want to use.</p>
+<p>On Cumulus, open a new thread for (<a href="https://21centuryweather.discourse.group/c/software-support/storage-allocation-requests-on-gb02/44"><code>gb02</code></a>, <a href="https://21centuryweather.discourse.group/c/modelling-science/storage-allocation-requests-for-fy29/47"><code>fy29</code></a>, <a href="https://21centuryweather.discourse.group/c/centre-project-2-sst-movs-and-weather-systems/storage-allocation-requests-for-if69/50"><code>if69</code></a>, <a href="https://21centuryweather.discourse.group/c/high-impact-weather/storage-allocation-requests-for-ng72/51"><code>ng72</code></a>) in the Storage Requests subcategory associated with the NCI project you want to use.</p>
 <p><strong>What does the request involve?</strong> Mention:</p>
 <ul>
 <li><p>your NCI username,</p></li>
 <li><p>how much storage you request,</p></li>
-<li><p>a short description what is it for</p></li>
+<li><p>a short description of what it is for</p></li>
 <li><p>your data management plan - how long will you need to keep the data on the project, what is your plan to move to tape, etc</p></li>
-<li><p>(for gb02 requests) explain how your plans are relevant to the centre-wide project and how is of interest to a wide range of people in the centre.ople in the centre.</p></li>
+<li><p>(for gb02 requests) explain how your plans are relevant to the centre-wide project and how they are of interest to a wide range of people in the centre.</p></li>
 </ul>
-<strong>Minimum compute allocation</strong>
-<p>Any user can use up to certain amount of storage without any request. Please, visit the thread asociated to each project to know more about the limits.</p>
+<strong>Minimum storage allocation</strong>
+<p>Any user can use up to a certain amount of storage without any request. Please, visit the thread associated to each project to know more about the limits.</p>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
     <template>Expand</template>
@@ -482,7 +479,7 @@ grid-auto-rows: minmax(0, 1fr);">
 <tr class="header">
 <th>NCI Project</th>
 <th>Theme</th>
-<th>Centre Projectcs</th>
+<th>Centre Projects</th>
 <th>NCI Project Lead</th>
 <th>SU/quarter + storage</th>
 </tr>
@@ -526,7 +523,7 @@ grid-auto-rows: minmax(0, 1fr);">
 </tbody>
 </table>
 <p>*gb02 panel: Navid Constantinou, Paul Gregory, Bethan White, Chenhui Jin, Andrew Brown, and Sam Green</p>
-<p>Last update: 05-11-2026 10:11</p>
+<p>Last updated: 5 November 2026</p>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
     <template>Expand</template>

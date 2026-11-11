@@ -23,6 +23,7 @@ jobs:
               git pull
               source ./env.sh
               quarto render docs/dashboard.ipynb --execute
+              python scripts/polish_site.py docs/dashboard.html
               git add docs/dashboard*
               git commit -m "UPDATE: dashboard"
               git push

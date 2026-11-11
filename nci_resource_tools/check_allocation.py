@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from html import escape
 
 # Create a dictionary of allocation vs usage dataframes
 
@@ -36,13 +37,8 @@ def check_allocation(grant_dict,
 
     return alloc_df_dict 
 
-def create_user_table(SU_df_dict1, 
-                      allocation_df,
-                      default_limits=None
-                      ):
-    """
-    Create a table of usage by user for a given project
-    """   
+def _user_allocation_data(SU_df_dict1, allocation_df, default_limits=None):
+    """Build per-user usage and limits, including users on a default limit."""
     if default_limits is None:
         default_limits = {project: 5 for project in SU_df_dict1.keys()}
     
@@ -64,8 +60,51 @@ def create_user_table(SU_df_dict1,
     table_by_user['status'] = np.where(table_by_user['usage'] > table_by_user['allocation'],
     'Usage exceeds allocation by ' + (table_by_user['usage'] - table_by_user['allocation']).round(1).astype(str),
     'Within the ' + table_by_user['allocation'].astype(str) + ' KSU allocation per quarter')
-    
+
     table_by_user.columns = [col.capitalize() for col in table_by_user.columns]
+    return table_by_user
+
+
+def create_allocation_overview(SU_df_dict1, allocation_df, default_limits=None):
+    """Return a compact HTML summary of current per-user SU allocations."""
+    users = _user_allocation_data(SU_df_dict1, allocation_df, default_limits)
+    return _allocation_overview_html(users)
+
+
+def _allocation_overview_html(users):
+    """Render an overview from the same columns shown in the user table."""
+    ratio = users['Usage'] / users['Allocation'].replace(0, np.nan)
+    exceeded = users[ratio > 1].copy()
+    exceeded['Percent'] = ratio[ratio > 1]
+    exceeded = exceeded.sort_values('Percent', ascending=False)
+    near = int(((ratio > .75) & (ratio <= 1)).sum())
+    rows = ''.join(
+        '<li><span><b>{project}</b> · {user}</span><strong>{percent:.0f}% used</strong></li>'.format(
+            project=escape(str(row.Project)),
+            user=escape(str(row.User)),
+            percent=row.Percent * 100,
+        )
+        for row in exceeded.head(5).itertuples(index=False)
+    )
+    if not rows:
+        rows = '<li>All users are within their allocations.</li>'
+    return (
+        '<div class="allocation-overview">'
+        '<h3>Allocation watch</h3>'
+        '<p>Quarterly SU usage across all users, including default allocations.</p>'
+        '<div class="allocation-totals">'
+        f'<div><strong>{len(exceeded)}</strong><span>Over allocation</span></div>'
+        f'<div><strong>{near}</strong><span>75–100% used</span></div>'
+        '</div><ul>' + rows + '</ul></div>'
+    )
+
+
+def create_user_table(SU_df_dict1,
+                      allocation_df,
+                      default_limits=None
+                      ):
+    """Create a styled table of usage by user for each project."""
+    table_by_user = _user_allocation_data(SU_df_dict1, allocation_df, default_limits)
     def highlight_over_allocation(row):
         warning = 'exceeds' in row['Status']
         return ['color: #B7533D' if warning else '' for _ in row]
